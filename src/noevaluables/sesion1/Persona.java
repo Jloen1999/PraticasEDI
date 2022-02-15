@@ -56,8 +56,8 @@ public class Persona {
                 ", dni=" + dni +
                 '}';
     }
-    public Persona(String nombre, int edad){
+    public Persona(String nombre, int dni){
         this.nombre=nombre;
-        this.edad=edad;
+        this.dni=dni;
     }
 }
