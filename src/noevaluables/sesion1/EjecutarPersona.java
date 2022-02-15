@@ -21,6 +21,8 @@ public class EjecutarPersona {
         per1.setDni(Integer.parseInt(input.readLine()));
         System.out.print("Edad: ");
         per1.setEdad(Integer.parseInt(input.readLine()));
+        System.out.println(per1.toString());
+
     }
 
 }
