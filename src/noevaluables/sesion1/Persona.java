@@ -46,4 +46,14 @@ public class Persona {
     public void setDni(int dni) {
         this.dni = dni;
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", edad=" + edad +
+                ", dni=" + dni +
+                '}';
+    }
 }
