@@ -13,7 +13,14 @@ public class EjecutarPersona {
         Persona per=new Persona("Jose Luis","Ela Nanguan",21,232324);
         Persona per1=new Persona();
         System.out.println(per.toString());
-        System.out.println("Nombre: ",per.setNombre(input.readLine()));
+        System.out.print("Nombre: ");
+        per1.setNombre(input.readLine());
+        System.out.print("Apellidos: ");
+        per1.setApellidos(input.readLine());
+        System.out.print("DNI: ");
+        per1.setDni(Integer.parseInt(input.readLine()));
+        System.out.print("Edad: ");
+        per1.setEdad(Integer.parseInt(input.readLine()));
     }
 
 }
