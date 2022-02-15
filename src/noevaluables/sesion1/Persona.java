@@ -14,4 +14,20 @@ public class Persona {
         this.edad = edad;
         this.dni = dni;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public int getDni() {
+        return dni;
+    }
 }
