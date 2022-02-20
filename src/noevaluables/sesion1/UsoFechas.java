@@ -14,5 +14,12 @@ public class UsoFechas {
 
         Date fechaActual=new Date();//Instanciamos un objeto que nos mostrara la fecha actual
         System.out.println("Fecha Actual: "+fechaActual);
+
+        //Procedemos a comparar ambas fechas
+        if(getFecha.compareTo(fechaActual)==0){
+            System.out.println("Ambas fechas son iguales");
+        }else{
+            System.out.println("Ambas fechas son distintas");
+        }
     }
 }
