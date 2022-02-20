@@ -81,15 +81,8 @@ public class Libro {
         return "[" +getTitulo()+','+getAutor()+','+getIsbn()+"]";
     }
 
-           //Metodo equals
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Libro libro = (Libro) o;
-//        return isbn == libro.isbn && Objects.equals(titulo, libro.titulo) && Objects.equals(autor, libro.autor);
-//    }
-    
+ 
+
     //Metodo equals como profe
     @Override
     public boolean equals(Object o){
