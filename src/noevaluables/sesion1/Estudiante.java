@@ -29,7 +29,8 @@ public class Estudiante extends Persona{
 //                "Numero de expediente=" +getNumExpediente()+super.toString()+
 //                "}";
 //    }
-    
+
+    //Redefino el metodo toString
     public String toString(){
         return "Estudiante[" +
                 "nombre=" +nombre+ //acceso como atributo directo
