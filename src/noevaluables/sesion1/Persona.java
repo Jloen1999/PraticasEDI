@@ -11,43 +11,57 @@
 package noevaluables.sesion1;
 
 import java.util.Objects;
-
+import java.util.Date;
 public class Persona { //Creamos la clase con el mismo nombre que el fichero
     //Creamos los atributos
-    private String nombre;
-    private String apellidos;
-    private int edad;
-    private int dni;
-    private char sexo;
-    private int numPersonas=0;
+    protected String nombre;
+    protected String apellidos;
+    protected int edad;
+    protected int dni;
+    protected char sexo;
+    protected int numPersonas=0;
+    protected Date fechaNac;
 
-    public Persona() { //Creamos el constructor por defecto
-        nombre = "Jose Luis";
-        apellidos = "Ela Nanguan";
+    public Persona() { //Creamos el constructor por defecto para iniciarlizar el objeto o los atributos de la clase
+        nombre = new String();
+        apellidos = new String();
         edad = 21;
         dni = 123456;
         sexo='H';
+        fechaNac=new Date();//Inicializa la fecha con la fecha actual
         contarPersona();
     }
 
-    public Persona(String nombre, String apellidos, int edad, int dni, char sexo) {//Creamos el constructor parametrizado
+    public Persona(String nombre, String apellidos, int edad, int dni, char sexo, Date fechaNac) {//Creamos el constructor parametrizado
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
         this.dni = dni;
         this.sexo=sexo;
+        this.fechaNac=fechaNac;
         contarPersona();
     }
 
-    public Persona(Persona p){
+    public void setFechaNac(Date fechaNac){
+        this.fechaNac=fechaNac;
+    }
+    public Date getFechaNac(){
+        return fechaNac;
+    }
+    public Persona(Persona p){//Creamos
         this.nombre=p.getNombre();
         this.apellidos=p.getApellidos();
         this.dni=p.getDni();
         this.edad=p.getEdad();
+        this.fechaNac=p.getFechaNac();
+    }
+
+    public void happyBirthDay(){
+        System.out.println("!!!happyBirthDay!!!");
     }
 
     public Persona mostrarPersonaClonada(){
-        return new Persona(this.nombre,this.apellidos,this.edad,this.dni,this.sexo);
+        return new Persona(this.nombre,this.apellidos,this.edad,this.dni,this.sexo, this.fechaNac);
     }
 
     public char getSex()
@@ -113,18 +127,17 @@ public class Persona { //Creamos la clase con el mismo nombre que el fichero
         return edad;
     }
 
-    @Override
     public String toString(){
       return "Persona{" +
               "Nombre='"+getNombre()+'\''+
               ", apellidos='"+getApellidos()+'\''+
               ", edad="+getEdad()+
               ", dni="+getDni()+
-
+              ", sexo="+getSexo()+
+              ", Fecha Actual="+getFechaNac()+
               "}";
     }
 
-    @Override
     public boolean equals(Object o)
     {
         boolean result;
