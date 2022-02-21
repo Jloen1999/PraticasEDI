@@ -22,9 +22,37 @@ public class Estudiante extends Persona{
         return numExpediente;
     }
 
+    //Redefino el metodo toString()
+
+//    public String toString(){
+//        return "Estudiante{" +
+//                "Numero de expediente=" +getNumExpediente()+super.toString()+
+//                "}";
+//    }
+    
     public String toString(){
-        return "Estudiante{" +
-                "Numero de expediente=" +getNumExpediente()+super.toString()+
-                "}";
+        return "Estudiante[" +
+                "nombre=" +nombre+ //acceso como atributo directo
+                "dni=" +super.getDni() +//acceso mediante el metodo getters
+                "edad="+super.edad+ //acceso al atributo por super
+                "Numero de expediente="+numExpediente+
+                "]";
     }
+
+    //Redefino el metodo equals
+    public boolean equals(Object o){
+        if(this==o) return true;
+        if(getClass()!=o.getClass() && o==null) return false;
+        Estudiante est=(Estudiante) o;
+        return this.numExpediente==est.numExpediente && super.equals(o);
+    }
+
+
+    //Quiero redefinir metodo happyBirthDay
+    //En persona se define public void happyBirthDay
+    public void happyBirthDay(){
+        edad++;
+        System.out.println("!!!happyBirthDay!!!");
+    }
+
 }
