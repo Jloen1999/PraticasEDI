@@ -1,16 +1,18 @@
 package noevaluables.sesion1;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Transaccion {
     protected double d;
     protected Date f;
 
-    public Transaccion(double d,Date f) {
+    public Transaccion(double d, Date f) {
         this.d = d;
-        this.f=f;
+        this.f = f;
     }
-    public Transaccion(){
+
+    public Transaccion() {
 
     }
 
@@ -30,6 +32,8 @@ public class Transaccion {
         this.f = f;
     }
 
+    //Metodo para aplicar el 10%
+
     @Override
     public String toString() {
         return "Transaccion{" +
@@ -37,4 +41,13 @@ public class Transaccion {
                 ", f=" + f +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transaccion that = (Transaccion) o;
+        return Double.compare(that.d, d) == 0 && Objects.equals(f, that.f);
+    }
+
 }
