@@ -79,12 +79,12 @@ public class Billetes {//Creamos la clase Billete con el mismo nombre que el fic
             System.out.println("error");
         } else {//En caso contrario
             double decimal = dinero % 1;//Obtenemos la parte decimal
-            double parteDecimal = (Math.round(decimal * 100.0) / 100.0) * 100;//Solo necesitamos dos cifras en la parte decimal, la cual multiplicamos por 100 para quedarnos sin decimales
+            double parteDecimal = (Math.round(decimal * 100.0) / 100.0);//Solo necesitamos dos cifras en la parte decimal, la cual multiplicamos por 100 para quedarnos sin decimales
 
             int parteEntera = (int) dinero;//Obtenemos la parte entera
 
             //Empezamos con la parte entera/Euros
-            euro = 500;//Asignamos a la variable euro la cantidades de referencia y
+            euro = 500;//Asignamos a la variable euro las cantidades de referencia y
             // mientras que el dinero introducido sea mayor o igual
             // a dicha cantidad se seguira incrementando hasta que sea menor y entonces repetimos
             // el proceso con el resto de cantidades de referencia

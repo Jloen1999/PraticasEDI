@@ -1,3 +1,6 @@
+package noevaluables.sesion2;
+
+import noevaluables.sesion2.Palabra;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -5,14 +5,16 @@ public class Peso {
     public Peso(){
         gramos=0;
     }
-    public Peso(double cantidad, String unidad){
-        switch (unidad) {
-            case "gr" -> gramos = cantidad;
-            case "kg" -> gramos = cantidad * 1000;
-            case "lb" -> gramos = cantidad / 0.0022;
-            case "oz" -> gramos = cantidad / 0.0353;
-        }
-
+    public Peso(double cantidad, char unidad){
+        String result="";
+        result=switch (unidad) {
+            case 'g' -> ""+cantidad;
+            case 'k' -> ""+cantidad * 1000;
+            case 'l' -> ""+cantidad / 0.0022;
+            case 'o' -> ""+cantidad / 0.0353;
+            default -> throw new IllegalStateException("Unexpected value: " + unidad);
+        };
+       gramos=Double.parseDouble(result);
 
     }
     public double getGramos()
