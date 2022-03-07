@@ -1,3 +1,5 @@
+package evaluables.sesion3;
+
 public class Palabra{
     protected String texto;
     protected String pista;
