@@ -32,6 +32,14 @@ public class Palabra{
         return longitud;
     }
 
+    public String toString(){
+        return "Palabra{" +
+                "Texto=" +getTexto()+
+                "Pista=" +getPista()+
+                "Longitud="+getLongitud()+
+                "}";
+    }
+
     
 
 }
