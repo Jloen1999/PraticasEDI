@@ -40,6 +40,12 @@ public class Palabra{
                 "}";
     }
 
-    
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if(getClass()!=o.getClass() && o==null) return false;
+        Palabra p=(Palabra) o;
+        return this.texto.equals(p.getTexto()) && this.pista.equals(p.getPista()) && this.longitud==p.longitud;
+    }
+
 
 }
