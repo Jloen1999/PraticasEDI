@@ -48,7 +48,8 @@
 *
  */
 
-package unex.cum.edi.sesion6;
+package evaluables.sesion6;
+
 
 import java.io.IOException;
 

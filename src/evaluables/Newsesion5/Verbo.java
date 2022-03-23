@@ -1,4 +1,4 @@
-package unex.cum.edi.sesion5;
+package evaluables.Newsesion5;
 
 public class Verbo extends Palabra{
     private int conjugacion;

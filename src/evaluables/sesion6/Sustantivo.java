@@ -1,4 +1,4 @@
-package unex.cum.edi.sesion6;
+package evaluables.sesion6;
 
 public class Sustantivo extends Palabra {
     private int numero;

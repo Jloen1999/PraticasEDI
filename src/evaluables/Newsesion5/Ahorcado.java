@@ -1,6 +1,4 @@
-package unex.cum.edi.sesion5;
-
-import unex.cum.edi.practica.tablero.Teclado;
+package evaluables.Newsesion5;
 
 public class Ahorcado {
     private Teclado t = new Teclado();

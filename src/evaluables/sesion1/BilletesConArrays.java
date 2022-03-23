@@ -8,12 +8,12 @@
  * @Version: 04/02/2022
  */
 
-package noevaluables.sesion1;
+package evaluables.sesion1;
 
 import java.util.Scanner;
 
 public class BilletesConArrays {
-    public Billetes() {
+    public BilletesConArrays() {
         Scanner input = new Scanner(System.in);
         int[] cantidadEuros = {500, 200, 100, 50, 20, 10, 5, 2, 1};
         int[] cantidadCentimos = new int[6];

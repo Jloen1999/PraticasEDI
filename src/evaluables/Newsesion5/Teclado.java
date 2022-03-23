@@ -1,4 +1,4 @@
-package unex.cum.edi.sesion5;
+package evaluables.Newsesion5;
 
 import javax.swing.*;
 import java.io.BufferedReader;

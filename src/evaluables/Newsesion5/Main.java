@@ -1,4 +1,4 @@
-package es.unex.cum.edi.sesion5;
+package evaluables.Newsesion5;
 
 import java.io.IOException;
 
@@ -14,9 +14,9 @@ public class Main {
         initAhorcado(tam, max);//Inicializamos el ahorcado con un tamaño y maximo de intentos fijos
         fillWordArray();//Rellenamos el array de palabras
         int numero = controlarIndice();//Introducimos un numero entre 1 y 5
-        a.setSeleccionado(a.getLista()[numero]);//Obtenemos la palabra que ocupa dicha posicion
+        a.setSeleccionada(a.getLista()[numero]);//Obtenemos la palabra que ocupa dicha posicion
         System.out.println(a.toString());//Mostramos dicha palabra seleccionada
-        getSelectedWord(a.getSeleccionado());
+        getSelectedWord(a.getSeleccionada());
         showAllWords();//Mostramos todas las palabras del array
         System.out.println("Longitud Total: " + getLongitudTotal());//Mostramos la longitud total de la suma de las longitudes de todas las palabras del array
         showOwnAttributes();//Mostrar el atributo propio de las clases derivadas(Sustantivo, Adjetivo,Verbo)
@@ -33,11 +33,11 @@ public class Main {
             //tipo=t.Menu(new String[] {"1. Sustantivo","2. Verbo","3. Adjetivo"},1,3); //Mostramos el menu
             tipo = t.leerEntero();//Introducimos el tipo
             switch (tipo) {//Según el tipo que hemos introducido previamente añadiremos un sustantivo(tipo-->1), verbo(tipo-->2) o adjetivo(tipo-->3)
-                case 1: a.addPalabra(new Sustantivo(new Palabra(t.literalConString("Introduce el texto: "), t.literalConString("Introduce la pista:")), t.literalConEntero("Introduce el numero: ")));//añadimos un sustantivo
+                case 1: a.addPalabra(new Sustantivo(t.literalConString("Introduce el texto: "), t.literalConString("Introduce la pista:"), t.literalConEntero("Introduce el numero: ")));//añadimos un sustantivo
                 break;
-                case 2: a.addPalabra(new Verbo(new Palabra(t.literalConString("Introduce el texto: "), t.literalConString("Introduce la pista:")), t.literalConEntero("Introduce la conjugacion: ")));//añadimos un verbo
+                case 2: a.addPalabra(new Verbo(t.literalConString("Introduce el texto: "), t.literalConString("Introduce la pista:"), t.literalConEntero("Introduce el numero: ")));//añadimos un verbo
                 break;
-                case 3: a.addPalabra(new Adjetivo(new Palabra(t.literalConString("Introduce el texto: "), t.literalConString("Introduce la pista:")), t.literalConEntero("Introduce el genero: ")));//añadimos un adjetivo
+                case 3: a.addPalabra(new Adjetivo(t.literalConString("Introduce el texto: "), t.literalConString("Introduce la pista:"), t.literalConEntero("Introduce el numero: ")));//añadimos un adjetivo
                 break;
             }
         }

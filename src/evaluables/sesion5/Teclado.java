@@ -1,5 +1,4 @@
-package unex.cum.edi.sesion5;
-
+package evaluables.sesion5;
 import java.io.*;
 
 /** Clase para la entrada de datos por Teclado

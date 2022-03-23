@@ -1,4 +1,4 @@
-package unex.cum.edi.sesion5;
+package evaluables.sesion5;
 
 import java.util.Random;
 import java.io.IOException;
