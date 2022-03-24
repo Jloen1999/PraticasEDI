@@ -69,19 +69,17 @@ public class JuegoMinas implements Juego {
         while (!verSiFin() && !endMines) {
 
             // Nos aseguramos de que se introduzcan bien los datos
-            do {
-                x = t.literalConEntero("Introduce la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
-                if (x < 0 || x >= tMinas.getNumFilas()) {
-                    System.out.println("Error");
-                }
-            } while (x < 0 || x >= tMinas.getNumFilas());
+            x = t.literalConEntero("Introduce la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
+            while (x < 0 || x >= tMinas.getNumFilas()) {
+                System.out.println("Error:");
+                x = t.literalConEntero("Vuelve a introducir la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
+            }
 
-            do {
-                y = t.literalConEntero("Introduce la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
-                if (y < 0 || y >= tMinas.getNumColumnas()) {
-                    System.out.println("Error");
-                }
-            } while (y < 0 || y >= tMinas.getNumColumnas());
+            y = t.literalConEntero("Introduce la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
+            while (y < 0 || y >= tMinas.getNumColumnas()) {
+                System.out.println("Error:");
+                y = t.literalConEntero("Vuelve a introducir la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
+            }
 
             // Obtenemos la CeldaMinas de las posiciones introducidas
             CeldaMinas cMinas = (CeldaMinas) tMinas.getCelda(x, y);
@@ -143,8 +141,8 @@ public class JuegoMinas implements Juego {
         // Celdas descubiertas no minas + todas las minas del tablero
         int cells = cellsUncovered + ((TableroMinas) tMinas).countMinesTab();
 
-        // Comprobamos que sea el total de las celdas del tablero 
-        // lo que indica que se han descubierto todas las celdas no minas
+        // Comprobamos que sea el total de las celdas del tablero, 
+        // lo que supone que se han descubierto todas las celdas no minas
         return (cells == (tMinas.getNumFilas()) * tMinas.getNumColumnas());
     }
 }

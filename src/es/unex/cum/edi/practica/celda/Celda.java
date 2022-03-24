@@ -103,7 +103,6 @@ public abstract class Celda {
     @Override
     public boolean equals(Object obj) {
         Celda c = (Celda) obj;
-
         return fila == c.fila && columna == c.columna && estado == c.estado;
     }
 

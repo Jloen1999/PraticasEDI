@@ -45,35 +45,29 @@ public class Main {
         int rows, columns, maxNumeric;
         char response;
 
-        do {
+        response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?");
+        while (response != 's' && response != 'S' && response != 'n' && response != 'N') {
+            System.out.println("Error:");
             response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?");
-            if (response != 's' && response != 'S' && response != 'n' && response != 'N') {
-                System.out.println("Error");
-            }
-        } while (response != 's' && response != 'S' && response != 'n' && response != 'N');
+        }
 
         if (response == 'N' || response == 'n') {
             System.out.println("Datos iniciales");
-            do {
-                rows = t.literalConEntero("Introduce el número de filas");
-                if (rows < 0) {
-                    System.out.println("Error");
-                }
-            } while (rows < 0);
+            
+            rows = t.literalConEntero("Introduce el número de filas");
+            while (rows < 0) {
+                rows = t.literalConEntero("Error: vuelve a introducir el número de filas");
+            }
 
-            do {
-                columns = t.literalConEntero("Introduce el número de columnas");
-                if (columns < 0) {
-                    System.out.println("Error");
-                }
-            } while (columns < 0);
+            columns = t.literalConEntero("Introduce el número de columnas");
+            while (columns < 0) {
+                columns = t.literalConEntero("Error: vuelve a introducir el número de columnas");
+            }
 
-            do {
-                maxNumeric = t.literalConEntero("Introduce el número máximo de minas");
-                if (maxNumeric < 0 || maxNumeric > (rows * columns)) {
-                    System.out.println("Error");
-                }
-            } while (maxNumeric < 0 || maxNumeric > (rows * columns));
+            maxNumeric = t.literalConEntero("Introduce el número máximo de minas [0," + ((rows * columns) - 1) +"]");
+            while (maxNumeric < 0 || maxNumeric >= (rows * columns)) {
+                maxNumeric = t.literalConEntero("Error: vuelve a introducir el número máximo de minas [0," + ((rows * columns) - 1) +"]");
+            }
 
             TableroMinas tab = new TableroMinas(rows, columns, maxNumeric);
             jMinas = new JuegoMinas(tab);

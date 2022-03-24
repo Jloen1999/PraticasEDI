@@ -4,7 +4,7 @@ package es.unex.cum.edi.practica.celda;
  * Clase CeldaMinas. Es una clase que deriva de la clase
  * abstracta Celda
  * 
- * @author Jose Luis Obiang
+ * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0
  * @see Celda
  */
