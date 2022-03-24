@@ -4,7 +4,7 @@ package es.unex.cum.edi.practica.celda;
  * Clase abstracta Celda
  * 
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0
+ * @version 1.0_24/03/2022
  */
 public abstract class Celda {
 

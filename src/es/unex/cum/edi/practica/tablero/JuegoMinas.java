@@ -6,9 +6,9 @@ import es.unex.cum.edi.practica.celda.*;
 
 /**
  * Clase JuegoMinas
- * 
- * @author Jose Luis Obiang
- * @version 1.0
+ *
+ * @author Jose Luis Obiang Ela Nanguan
+ * @version 1.0_24/03/2022
  * @see Juego
  */
 public class JuegoMinas implements Juego {
@@ -62,10 +62,9 @@ public class JuegoMinas implements Juego {
     @Override
     public void jugar() throws IOException {
         int x, y, option;
-        boolean endMines;
+        boolean endMines=false;
         Teclado t = new Teclado();
 
-        endMines = false;
         while (!verSiFin() && !endMines) {
 
             // Nos aseguramos de que se introduzcan bien los datos
@@ -89,7 +88,7 @@ public class JuegoMinas implements Juego {
             if (option == 1) {
                 cMinas.setDescubierta(true);
             } else {
-                int c = ((TableroMinas) tMinas).countMinesTab();
+                int c = tMinas.countMinesTab();
                 if (c < tMinas.getNumMaximo()) {
                     // Ponemos el estado de la celda como mina 1
                     tMinas.setEstado(x, y, 1);

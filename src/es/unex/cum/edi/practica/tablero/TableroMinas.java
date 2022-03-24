@@ -7,9 +7,9 @@ import es.unex.cum.edi.practica.celda.*;
 /**
  * Clase TableroMinas. Es una clase que deriva de la clase
  * abstracta Tablero
- * 
- * @author Jose Luis Obiang
- * @version 1.0
+ *
+ * @author Jose Luis Obiang Ela Nanguan
+ * @version 1.0_24/03/2022
  * @see Tablero
  */
 public class TableroMinas extends Tablero {
@@ -65,12 +65,11 @@ public class TableroMinas extends Tablero {
      * @return counterMines Devuelve un valor de tipo entero
      */
     public int countMinesTab() {
-        int counterMines;
+        int counterMines=0;
 
-        counterMines = 0;
-        for (int i = 0; i < this.numFilas; i++) {
-            for (int j = 0; j < this.numColumnas; j++) {
-                if (this.tablero[i][j].getEstado() == 1) {
+        for (int i = 0; i < super.numFilas; i++) {
+            for (int j = 0; j < super.numColumnas; j++) {
+                if (tablero[i][j].getEstado() == 1) {
                     counterMines++;
                 }
             }
@@ -85,7 +84,7 @@ public class TableroMinas extends Tablero {
     public void printBorderUpDown() {
 
         System.out.print("---");
-        for (int i = 0; i < this.numColumnas; i++) {
+        for (int i = 0; i < super.numColumnas; i++) {
             System.out.print("---");
         }
         System.out.println("---");
@@ -93,14 +92,14 @@ public class TableroMinas extends Tablero {
 
     /**
      * Metodo que se encarga de inicializar todas las
-     * celdas del tablero a partir del contructor de
-     * la clase derivada CeldaMinas
+     * celdas del tablero a partir del contructor parametrizado
+     * de la clase derivada CeldaMinas
      */
     @Override
     public void inicializar() {
 
-        for (int i = 0; i < this.numFilas; i++) {
-            for (int j = 0; j < this.numColumnas; j++) {
+        for (int i = 0; i < super.numFilas; i++) {
+            for (int j = 0; j < super.numColumnas; j++) {
                 this.tablero[i][j] = new CeldaMinas(i, j);
             }
         }
@@ -115,11 +114,10 @@ public class TableroMinas extends Tablero {
      */
     @Override
     public void repartir() {
-        int nRandom, counterMines;
+        int nRandom=0, counterMines=0;
 
-        nRandom = counterMines = 0;
-        for (int i = 0; i < this.numFilas; i++) {
-            for (int j = 0; j < this.numColumnas; j++) {
+        for (int i = 0; i < super.numFilas; i++) {
+            for (int j = 0; j < super.numColumnas; j++) {
                 // Numero aleatorio de 0 a 3 incluidos
                 nRandom = (new Random()).nextInt(4);
 

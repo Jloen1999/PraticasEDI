@@ -3,9 +3,9 @@ package es.unex.cum.edi.practica.celda;
 /**
  * Clase CeldaMinas. Es una clase que deriva de la clase
  * abstracta Celda
- * 
+ *
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0
+ * @version 1.0_24/03/2022
  * @see Celda
  */
 public class CeldaMinas extends Celda {
