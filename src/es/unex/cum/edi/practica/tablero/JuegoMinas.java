@@ -6,9 +6,9 @@ import es.unex.cum.edi.practica.celda.*;
 
 /**
  * Clase JuegoMinas
- *
+ * 
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0_24/03/2022
+ * @version 1.0, 24/03/2022
  * @see Juego
  */
 public class JuegoMinas implements Juego {
@@ -53,6 +53,50 @@ public class JuegoMinas implements Juego {
     }
 
     /**
+     * Metodo que nos permite introducir por teclado dos
+     * valores enteros que se almacenaran en un vector
+     * despues de comprobar su correcta introduccion
+     * 
+     * @param t Recibe un objeto de tipo Teclado
+     * @return parameters Devuelve un array de enteros
+     * @throws IOException Laza una excepcion
+     */
+    public Integer[] enterParametersXY(Teclado t) throws IOException {
+
+        // Nos aseguramos de que se introduzcan bien los datos
+        int x = t.literalConEntero("Introduce la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
+        while (x < 0 || x >= tMinas.getNumFilas()) {
+            System.out.println("Error:");
+            x = t.literalConEntero("Vuelve a introducir la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
+        }
+
+        int y = t.literalConEntero("Introduce la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
+        while (y < 0 || y >= tMinas.getNumColumnas()) {
+            System.out.println("Error:");
+            y = t.literalConEntero("Vuelve a introducir la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
+        }
+        Integer[] parameters = { x, y };
+
+        return parameters;
+    }
+
+    /**
+     * Meotodo que se encarga de mostrar por pantalla todas
+     * las celdas que tienen el estado 1 (mina)
+     */
+    public void showCellsMines() {
+
+        for (int i = 0; i < tMinas.getNumFilas(); i++) {
+            for (int j = 0; j < tMinas.getNumColumnas(); j++) {
+                CeldaMinas cM = (CeldaMinas) tMinas.getCelda(i, j);
+                if (cM.getEstado() == 1) {
+                    System.out.println(cM.toString());
+                }
+            }
+        }
+    }
+
+    /**
      * Metodo en el que realizamos un bucle que se encarga
      * de pedir una posicion (x,y) del tablero y establecer
      * si se quiere descubrir o anotar como mina
@@ -62,69 +106,76 @@ public class JuegoMinas implements Juego {
     @Override
     public void jugar() throws IOException {
         int x, y, option;
-        boolean endMines=false;
+        boolean endGame;
+        Integer[] parameters;
         Teclado t = new Teclado();
 
-        while (!verSiFin() && !endMines) {
+        endGame = false;
+        do {
 
-            // Nos aseguramos de que se introduzcan bien los datos
-            x = t.literalConEntero("Introduce la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
-            while (x < 0 || x >= tMinas.getNumFilas()) {
-                System.out.println("Error:");
-                x = t.literalConEntero("Vuelve a introducir la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
-            }
-
-            y = t.literalConEntero("Introduce la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
-            while (y < 0 || y >= tMinas.getNumColumnas()) {
-                System.out.println("Error:");
-                y = t.literalConEntero("Vuelve a introducir la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
-            }
+            parameters = enterParametersXY(t);
+            x = parameters[0];
+            y = parameters[1];
 
             // Obtenemos la CeldaMinas de las posiciones introducidas
             CeldaMinas cMinas = (CeldaMinas) tMinas.getCelda(x, y);
 
-            String[] args = { "1. Descubrir la celda", "2. Anotar la celda como mina" };
+            String[] args = { "1. Descubrir la celda.", "2. Anotar la celda como mina." };
             option = t.Menu(args, 1, 2);
             if (option == 1) {
                 cMinas.setDescubierta(true);
             } else {
-                int c = tMinas.countMinesTab();
-                if (c < tMinas.getNumMaximo()) {
-                    // Ponemos el estado de la celda como mina 1
-                    tMinas.setEstado(x, y, 1);
-                }
+                resolver(x, y);
             }
+
             // Mostramos el tablero actualizado
             tMinas.mostrar();
-            System.out.println(((CeldaMinas) tMinas.getCelda(x, y)).toString() + "\n");
+            System.out.println(cMinas.toString() + "\n");
 
             // !OJO! El juego tambien finaliza si la celda actual es "mina descubierta"
             if (cMinas.isDescubierta() && cMinas.getEstado() == 1) {
-                endMines = true; // Salimos del bucle
+                endGame = true;
             }
-        }
+
+            if (!endGame) {
+                endGame = verSiFin();
+            }
+        } while (!endGame);
+
+        System.out.println("***** FIN *****");
     }
 
     /**
      * Metodo que se encarga de cambiar el estado de la
-     * celda segun lo realizado en el paso anterior
+     * celda a partir de una posicion x e y. Anotamos una
+     * celda como mina cambiando su estado a 1
+     * 
+     * @param x Recibe un valor de tipo entero
+     * @param y Recibe un valor de tipo entero
      */
     @Override
-    public void resolver() {
+    public void resolver(int x, int y) {
+        int c;
 
+        c = ((TableroMinas) tMinas).countMinesTab();
+        if (c < tMinas.getNumMaximo()) {
+            tMinas.setEstado(x, y, 1);
+        }
     }
 
     /**
-     * Metodo que se encarga de ver si el juego ha acabado
-     * (finaliza si todas las celdas estan descubiertas menos
-     * las minas)
+     * Metodo que se encarga de ver si el juego ha finalizado
+     * (finaliza si todas las celdas no minas estan descubiertas
+     * o si el total de minas anotadas es igual al maximo de minas
      * 
-     * @return Devuelve un valor de tipo booleano
+     * @return endGame Devuelve un valor de tipo booleano
      */
     @Override
     public boolean verSiFin() {
         int cellsUncovered;
+        boolean endGame;
 
+        endGame = false;
         // Obtenemos todas las celdas descubiertas que no son minas
         cellsUncovered = 0;
         for (int i = 0; i < tMinas.getNumFilas(); i++) {
@@ -137,11 +188,22 @@ public class JuegoMinas implements Juego {
                 }
             }
         }
+
         // Celdas descubiertas no minas + todas las minas del tablero
         int cells = cellsUncovered + ((TableroMinas) tMinas).countMinesTab();
+        if (cells == (tMinas.getNumFilas()) * tMinas.getNumColumnas()) {
+            // Si se descubre todas las celdas que no son minas
+            System.out.println("Todas las celdas no minas han sido descubiertas.");
+            endGame = true;
+        }
 
-        // Comprobamos que sea el total de las celdas del tablero, 
-        // lo que supone que se han descubierto todas las celdas no minas
-        return (cells == (tMinas.getNumFilas()) * tMinas.getNumColumnas());
+        // Si anotamos todas las minas
+        if (tMinas.countMinesTab() == tMinas.getNumMaximo()) {
+            System.out.println("Todas las minas han sido anotadas.");
+            showCellsMines();
+
+            endGame = true;
+        }
+        return endGame;
     }
 }

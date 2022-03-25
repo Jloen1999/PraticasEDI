@@ -1,10 +1,10 @@
 package es.unex.cum.edi.practica.celda;
 
 /**
- * Clase abstracta Celda
+ * Clase abtracta Celda
  * 
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0_24/03/2022
+ * @version 1.0, 22/03/2022
  */
 public abstract class Celda {
 
@@ -103,6 +103,7 @@ public abstract class Celda {
     @Override
     public boolean equals(Object obj) {
         Celda c = (Celda) obj;
+
         return fila == c.fila && columna == c.columna && estado == c.estado;
     }
 

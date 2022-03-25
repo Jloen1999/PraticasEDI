@@ -4,8 +4,8 @@ package es.unex.cum.edi.practica.celda;
  * Clase CeldaPareja. Es una clase que deriva de la clase
  * abstracta Celda
  * 
- * @author Jose Luis Obiang
- * @version 1.0
+ * @author Jose Luis Obiang Ela Nanguan
+ * @version 1.0, 22/03/2022
  * @see Celda
  */
 public class CeldaPareja extends Celda {

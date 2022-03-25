@@ -3,9 +3,9 @@ package es.unex.cum.edi.practica.celda;
 /**
  * Clase CeldaMinas. Es una clase que deriva de la clase
  * abstracta Celda
- *
+ * 
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0_24/03/2022
+ * @version 1.0, 22/03/2022
  * @see Celda
  */
 public class CeldaMinas extends Celda {
@@ -84,7 +84,7 @@ public class CeldaMinas extends Celda {
                     stringStatus = "agua descubierta";
                     break;
                 case 1:
-                    stringStatus = "mina descubierta. ***** FIN *****";
+                    stringStatus = "mina descubierta";
             }
         }
         return stringStatus;
@@ -113,6 +113,7 @@ public class CeldaMinas extends Celda {
     @Override
     public String toString() {
         return super.toString() +
-                " CeldaMinas [estado=" + getEstadoString() + "]";
+                " CeldaMinas [descubierta=" + (descubierta ? "sí" : "no") +
+                (getEstadoString().length() > 0 ? (", estado=" + getEstadoString()) : "") + "]";
     }
 }

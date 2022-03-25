@@ -7,12 +7,12 @@ import es.unex.cum.edi.practica.celda.*;
 /**
  * Clase TableroMinas. Es una clase que deriva de la clase
  * abstracta Tablero
- *
+ * 
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0_24/03/2022
- * @see Tablero
+ * @version 1.0, 23/03/2022
+ * @see Tablero, Colores
  */
-public class TableroMinas extends Tablero {
+public class TableroMinas extends Tablero implements Colores {
 
     private int numMaximo;
 
@@ -65,11 +65,12 @@ public class TableroMinas extends Tablero {
      * @return counterMines Devuelve un valor de tipo entero
      */
     public int countMinesTab() {
-        int counterMines=0;
+        int counterMines;
 
-        for (int i = 0; i < super.numFilas; i++) {
-            for (int j = 0; j < super.numColumnas; j++) {
-                if (tablero[i][j].getEstado() == 1) {
+        counterMines = 0;
+        for (int i = 0; i < this.numFilas; i++) {
+            for (int j = 0; j < this.numColumnas; j++) {
+                if (this.tablero[i][j].getEstado() == 1) {
                     counterMines++;
                 }
             }
@@ -79,27 +80,28 @@ public class TableroMinas extends Tablero {
 
     /**
      * Metodo que se encarga de pintar en pantalla el
-     * borde superior e inferior del tablero
+     * borde superior e inferior del tablero. Le
+     * ponemos color de fondo Blanco y texto negro
      */
     public void printBorderUpDown() {
 
-        System.out.print("---");
-        for (int i = 0; i < super.numColumnas; i++) {
+        System.out.print(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "---");
+        for (int i = 0; i < this.numColumnas; i++) {
             System.out.print("---");
         }
-        System.out.println("---");
+        System.out.println("---" + ANSI_RESET);
     }
 
     /**
      * Metodo que se encarga de inicializar todas las
-     * celdas del tablero a partir del contructor parametrizado
-     * de la clase derivada CeldaMinas
+     * celdas del tablero a partir del contructor de
+     * la clase derivada CeldaMinas
      */
     @Override
     public void inicializar() {
 
-        for (int i = 0; i < super.numFilas; i++) {
-            for (int j = 0; j < super.numColumnas; j++) {
+        for (int i = 0; i < this.numFilas; i++) {
+            for (int j = 0; j < this.numColumnas; j++) {
                 this.tablero[i][j] = new CeldaMinas(i, j);
             }
         }
@@ -114,10 +116,11 @@ public class TableroMinas extends Tablero {
      */
     @Override
     public void repartir() {
-        int nRandom=0, counterMines=0;
+        int nRandom, counterMines;
 
-        for (int i = 0; i < super.numFilas; i++) {
-            for (int j = 0; j < super.numColumnas; j++) {
+        nRandom = counterMines = 0;
+        for (int i = 0; i < this.numFilas; i++) {
+            for (int j = 0; j < this.numColumnas; j++) {
                 // Numero aleatorio de 0 a 3 incluidos
                 nRandom = (new Random()).nextInt(4);
 
@@ -142,27 +145,43 @@ public class TableroMinas extends Tablero {
      * (|) -> Borde derecho e izquierdo del tablero
      * (*) -> Mina descubierta del tablero
      * (#) -> Casilla no descubierta
-     * (0|1|2|3) -> Valor del estado de la casilla del tablero
+     * (0|1|2|3) -> Valor del estado de la casilla del tablero.
+     * Colores de estados:
+     * (verde) -> Estado 0
+     * (rojo) -> Estado 1 (*)
+     * (azul) -> Estado 2
+     * (amarillo) -> Estado 3
      */
     @Override
     public void mostrar() {
+        String color;
 
         printBorderUpDown();
         for (int i = 0; i < this.numFilas; i++) {
-            System.out.print("|  ");
+            System.out.print(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "|  " + ANSI_RESET);
             for (int j = 0; j < this.numColumnas; j++) {
                 CeldaMinas cM = (CeldaMinas) getCelda(i, j);
                 if (cM.isDescubierta() && cM.getEstado() == 1) {
-                    System.out.print(" * ");
+                    System.out.print(ANSI_RED + " * " + ANSI_RESET);
                 } else {
                     if (cM.isDescubierta() && cM.getEstado() != 1) {
-                        System.out.print(" " + cM.getEstado() + " ");
+
+                        color = "";
+                        // Establecemos los colores
+                        if (cM.getEstado() == 0) { // Color azul
+                            color = ANSI_BLUE + " ";
+                        } else if (cM.getEstado() == 2) { // Color verde
+                            color = ANSI_GREEN + " ";
+                        } else { // Color amarillo
+                            color = ANSI_YELLOW + " ";
+                        }
+                        System.out.print(color + cM.getEstado() + " " + ANSI_RESET);
                     } else {
                         System.out.print(" # ");
                     }
                 }
             }
-            System.out.println("  |");
+            System.out.println(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "  |" + ANSI_RESET);
         }
         printBorderUpDown();
     }

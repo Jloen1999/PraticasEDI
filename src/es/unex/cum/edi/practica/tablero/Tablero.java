@@ -4,9 +4,9 @@ import es.unex.cum.edi.practica.celda.Celda;
 
 /**
  * Clase abstracta Tablero
- *
+ * 
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0_24/03/2022
+ * @version 1.0, 23/03/2022
  */
 public abstract class Tablero {
 
@@ -122,7 +122,6 @@ public abstract class Tablero {
         return tablero[fila][columna];
     }
 
-            //Metodos abstractos
     public abstract void inicializar();
 
     public abstract void repartir();

@@ -1,11 +1,11 @@
 JuegoMinas
 1. En el metodo verSiFin, el juego también puede finalizarse cuando 
-una celda mina es decubierta. ¿La celda mina se refiere cuando el 
+una celda mina es descubierta. ¿La celda mina se refiere cuando el
 estado es 1 verdad?
 2. En el metodo jugar, para anotar una celda como mina, ¿te refieres a
 poner el estado de una celda valor 1 verdad?
 3. En el paso 1 del enunciado de la practica, los diferentes estados que
 pueden haber, no especificas cuando descubierta = true y estado = 2 o 3.
 4. Me gustaría que me explicaras qué es lo que realmente hace el metodo
-repartir, ya que no me ha hecho falta utilizarlo, porque el estado de una
+resolver, ya que no me ha hecho falta utilizarlo, porque el estado de una
 celda lo modifico en el metodo jugar cuando anoto una celda como mina.
