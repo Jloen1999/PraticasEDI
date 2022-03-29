@@ -45,7 +45,7 @@ public class Main {
 
     public void initialData() throws Exception {
 
-        char response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?");
+        char response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?"); //Se trata de inicializar el tablero con el numero de filas, columnas y maximo de minas establecidos en el constructor por defecto
         response = Character.toUpperCase(response);
         while (response != 'S' && response != 'N') {
             System.out.println("Error:");
@@ -64,6 +64,13 @@ public class Main {
         }
     }
 
+    /**
+     * Metodo que recibe y devuelve un numero de filas o columnas despues de haber sido controladas
+     * @param coor de tipo entero, indica la cantidad de filas o columnas
+     * @param xy de tipo String
+     * @return coor, devuelve una cantidad de filas y columnas
+     * @throws IOException devuelve una excepcion
+     */
     public int controlFilColum(int coor,String xy) throws IOException{
         if(xy.equals("filas")){
             coor=t.literalConEntero("Introduce el número de filas");
