@@ -15,7 +15,7 @@ Acá un link para adquirir los conocimientos necesarios: https://github.com/Jloe
 
 ### ***Fases*** 🔧
 
-<span style="border: 1px dotted blue;color: blue;">Paso 1: Jerarquía de Clase: Celda</span>
+<p><span style="color: blue;">Paso 1: Jerarquía de Clase:Celda</span></p><br>
 Independientemente del juego a realizar se implementarán todas las clases que conforman la
 jerarquía Celda. Como puede verse en el diagrama UML del último folio la jerarquía está formada:
 
@@ -42,7 +42,7 @@ jerarquía Celda. Como puede verse en el diagrama UML del último folio la jerar
    Estas clases no incorporan ninguna lógica adicional, por tanto es una jerarquía de clase
 básica
 >
-<span style="border: 1px dotted blue;color: blue;">Paso 2: Composición nAria→ Clase Tablero</span>
+<p><span style="color: blue;">Paso 2: Composición nAria→ Clase Tablero</span></p><br>
 ___Una vez realizada la jerarquía de clase de Celda, el siguiente paso será modelar el concepto de
 tablero de Juego. En este caso un Tablero estará formado por una matriz bidimensional de Celdas.
 En este caso modelaremos una clase base abstracta denominada Tablero e implementaremos
@@ -76,7 +76,7 @@ seleccionado.
 - El principal cambio reside donde se realiza la lógica del juego → Clase Juego
 - Si se quisiera implementar otro juego basado en celdas, únicamente se tendría que añadir una
 clase derivada a la jerarquía de clase Celda y Tablero.
-<span style="border: 1px dotted blue;color: blue;">Paso 3 Composición unaria→ Clase Juego</span>
+<p><span style="color: blue;">Paso 3 Composición unaria→ Clase Juego</span></p><br>
 ___En este último paso, el objetivo será la implementación del juego en sí. Se deberá implementar
 únicamente la clase del Juego a implementar___
 - Clase JuegoPareja esta formado por:
