@@ -65,7 +65,8 @@ public class Main {
     }
 
     /**
-     * Metodo que recibe y devuelve un numero de filas o columnas despues de haber sido controladas
+     * Metodo que recibe y devuelve un numero de filas o columnas despues
+     * de comprobar su correcta introduccion
      * @param coor de tipo entero, indica la cantidad de filas o columnas
      * @param xy de tipo String
      * @return coor, devuelve una cantidad de filas y columnas

@@ -54,7 +54,7 @@ public class JuegoMinas implements Juego {
 
     /**
      * Metodo que nos permite introducir por teclado dos
-     * valores enteros, la fila y la columna y nos devolvera un entero
+     * valores enteros, una fila y columna especificas y nos devolvera un entero
      * despues de comprobar su correcta introduccion
      *
      * @param t    Recibe un objeto de tipo Teclado
