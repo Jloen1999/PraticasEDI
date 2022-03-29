@@ -2,7 +2,7 @@ package es.unex.cum.edi.practica.celda;
 
 /**
  * Clase abtracta Celda
- * 
+ *
  * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0, 22/03/2022
  */
@@ -26,7 +26,7 @@ public abstract class Celda {
      * Constructor parametrizado. Inicializa todos los
      * atributos de la clase con los nuevos valores
      * recibidos
-     * 
+     *
      * @param fila    Recibe un valor de tipo entero
      * @param columna Recibe un valor de tipo entero
      */
@@ -39,7 +39,7 @@ public abstract class Celda {
     /**
      * Metodo que nos permite obtener el valor del
      * atributo fila
-     * 
+     *
      * @return fila Devuelve un valor de tipo entero
      */
     public int getFila() {
@@ -48,7 +48,7 @@ public abstract class Celda {
 
     /**
      * Metodo que modifica el valor del atributo fila
-     * 
+     *
      * @param fila Recibe un valor de tipo entero
      */
     public void setFila(int fila) {
@@ -58,7 +58,7 @@ public abstract class Celda {
     /**
      * Metodo que nos permite obtener el valor del
      * atributo columna
-     * 
+     *
      * @return columna Devuelve un valor de tipo entero
      */
     public int getColumna() {
@@ -67,7 +67,7 @@ public abstract class Celda {
 
     /**
      * Metodo que modifica el valor del atributo columna
-     * 
+     *
      * @param columna Recibe un valor de tipo entero
      */
     public void setColumna(int columna) {
@@ -77,7 +77,7 @@ public abstract class Celda {
     /**
      * Metodo que nos permite obtener el valor del
      * atributo estado
-     * 
+     *
      * @return estado Devuelve un valor de tipo entero
      */
     public int getEstado() {
@@ -86,7 +86,7 @@ public abstract class Celda {
 
     /**
      * Metodo que modifica el valor del atributo estado
-     * 
+     *
      * @param estado Recibe un valor de tipo entero
      */
     public void setEstado(int estado) {
@@ -96,7 +96,7 @@ public abstract class Celda {
     /**
      * Metodo redefinido para comparar todos los atributos
      * de la clase
-     * 
+     *
      * @param obj Recibe un objeto global
      * @return Devuelve un valor de tipo booleano
      */
@@ -110,7 +110,7 @@ public abstract class Celda {
     /**
      * Metodo redefinido para mostrar todos los atributos de
      * esta clase
-     * 
+     *
      * @return Devuelve un valor de tipo cadena
      */
     @Override

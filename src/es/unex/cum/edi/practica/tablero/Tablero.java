@@ -4,7 +4,7 @@ import es.unex.cum.edi.practica.celda.Celda;
 
 /**
  * Clase abstracta Tablero
- * 
+ *
  * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0, 23/03/2022
  */
@@ -28,7 +28,7 @@ public abstract class Tablero {
      * Constructor parametrizado. Inicializa todos los
      * atributos de la clase con los nuevos valores
      * recibidos
-     * 
+     *
      * @param numFilas    Recibe un valor de tipo entero
      * @param numColumnas Recibe un valor de tipo entero
      */
@@ -41,7 +41,7 @@ public abstract class Tablero {
     /**
      * Metodo que nos permite obtener el valor del atributo
      * numFilas
-     * 
+     *
      * @return numFilas Devuelve un valor de tipo entero
      */
     public int getNumFilas() {
@@ -50,7 +50,7 @@ public abstract class Tablero {
 
     /**
      * Metodo que modifica el valor del atributo numFilas
-     * 
+     *
      * @param numFilas Recibe un valor de tipo entero
      */
     public void setNumFilas(int numFilas) {
@@ -60,7 +60,7 @@ public abstract class Tablero {
     /**
      * Metodo que nos permite obtener el valor del atributo
      * numColumnas
-     * 
+     *
      * @return numColumnas Devuelve un valor de tipo entero
      */
     public int getNumColumnas() {
@@ -69,7 +69,7 @@ public abstract class Tablero {
 
     /**
      * Metodo que modifica el valor del atributo numColumnas
-     * 
+     *
      * @param numColumnas Recibe un valor de tipo entero
      */
     public void setNumColumnas(int numColumnas) {
@@ -79,7 +79,7 @@ public abstract class Tablero {
     /**
      * Metodo que nos permite obtener el valor del atributo
      * tablero
-     * 
+     *
      * @return tablero Devuelve un array de tipo Celda
      */
     public Celda[][] getTablero() {
@@ -89,7 +89,7 @@ public abstract class Tablero {
     /**
      * Metodo que se encarga de modificar el estado de una
      * Celda del Tablero a partir de una fila y columna
-     * 
+     *
      * @param fila    Recibe un valor de tipo entero
      * @param columna Recibe un valor de tipo entero
      * @param estado  Recibe un valor de tipo entero
@@ -101,7 +101,7 @@ public abstract class Tablero {
     /**
      * Metodo que se encarga de obtener el estado de una Celda
      * del Tablero a partir de una fila y columna
-     * 
+     *
      * @param fila    Recibe un valor de tipo entero
      * @param columna Recibe un valor de tipo entero
      * @return Devuelve el valor entero del estado obtenido
@@ -113,7 +113,7 @@ public abstract class Tablero {
     /**
      * Metodo que se encarga de obtener una Celda del Tablero
      * a partir de una fila y columna
-     * 
+     *
      * @param fila    Recibe un valor de tipo entero
      * @param columna Recibe un valor de tipo entero
      * @return Devuelve el objeto Celda obtenido

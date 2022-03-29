@@ -3,14 +3,15 @@
 ## ***Comenzando*** 🚀
 ===
 
-___El objetivo de la práctica es el desarrollo de un conjunto de juegos basados en “Celdas”,
-concretamente el juego de las parejas, las 4 en rayas y el buscaminas. Para ello será necesario el uso
-de una metodología orientada a objetos así como el uso de estructuras de datos lineales y no
-lineales. El desarrollo de la práctica se realizará en dos/tres fases.___ 
+___El objetivo de la práctica es el desarrollo de un conjunto de juegos basados en “Celdas”, concretamente el juego de
+las parejas, las 4 en rayas y el buscaminas. Para ello será necesario el uso de una metodología orientada a objetos así
+como el uso de estructuras de datos lineales y no lineales. El desarrollo de la práctica se realizará en dos/tres
+fases.___
 
 ### ***Pre-requisitos*** 📋
-___Conocimientos de los contenidos teóricos / prácticos de
-la asignatura: Programación orientada a objetos, composición y herencia.___
+
+___Conocimientos de los contenidos teóricos / prácticos de la asignatura: Programación orientada a objetos, composición
+y herencia.___
 Acá un link para adquirir los conocimientos necesarios: https://github.com/Jloen1999/PraticasEDI/tree/master/src
 
 ### ***Fases*** 🔧
@@ -19,28 +20,27 @@ Acá un link para adquirir los conocimientos necesarios: https://github.com/Jloe
 Independientemente del juego a realizar se implementarán todas las clases que conforman la
 jerarquía Celda. Como puede verse en el diagrama UML del último folio la jerarquía está formada:
 
-- Clase Base: Celda: clase abstracta formada por 
-     -fila: el valor de la fila donde se encuentra situada la celda en la matriz del juego
-     -columna: el valor de la columna donde se encuentra situada la celda en la matriz del juego
-     -Estado: Tendrá distinto signficado dependiendo de la celda usada
-     - En CeldaRaya: 0 vacia 1 asignada a humana 2 asignada a ordenador
-     - En CeldaPareja: 0 NoMostrada 1 Mostrada 2 MostradaEmparejada
-     - En CeldaMina: 0 agua 1 mina 2 agua marcada como mina 3 mina marcada como mina
+- Clase Base: Celda: clase abstracta formada por -fila: el valor de la fila donde se encuentra situada la celda en la
+  matriz del juego -columna: el valor de la columna donde se encuentra situada la celda en la matriz del juego -Estado:
+  Tendrá distinto signficado dependiendo de la celda usada
+    - En CeldaRaya: 0 vacia 1 asignada a humana 2 asignada a ordenador
+    - En CeldaPareja: 0 NoMostrada 1 Mostrada 2 MostradaEmparejada
+    - En CeldaMina: 0 agua 1 mina 2 agua marcada como mina 3 mina marcada como mina
 - Clase Derivada: CeldaRaya: Estará formada por:
-     -color: valor entero que indica el color de la Celda (rojo o azul)
+  -color: valor entero que indica el color de la Celda (rojo o azul)
 - Clase Derivada: CeldaPareja: Estará formada por:
-     -valor: valor entero usado para representar el valor de la Celda para emparejar
-- Clase Derivada: CeldaMina: Estará formada por descubierta Con valor verdadero o falso.
-      De este modo habría los siguientes estados:
-     - Si estado = 0 y descubierta=false –> agua oculta
-     - Si estado = 1y descubierta=false –> mina oculta
-     - Si estado = 2 y descubierta=false –> agua marcada como mina
-     - Si estado = 3 y descubierta=false –> mina marcada como mina
-     - Si estado = 0 y descubierta=true–> agua descubierta
-     - Si estado = 1 y descubierta=true –> mina descubierta y por tanto FIN
->Consejo: 
-   Estas clases no incorporan ninguna lógica adicional, por tanto es una jerarquía de clase
-básica
+  -valor: valor entero usado para representar el valor de la Celda para emparejar
+- Clase Derivada: CeldaMina: Estará formada por descubierta Con valor verdadero o falso. De este modo habría los
+  siguientes estados:
+    - Si estado = 0 y descubierta=false –> agua oculta
+    - Si estado = 1y descubierta=false –> mina oculta
+    - Si estado = 2 y descubierta=false –> agua marcada como mina
+    - Si estado = 3 y descubierta=false –> mina marcada como mina
+    - Si estado = 0 y descubierta=true–> agua descubierta
+    - Si estado = 1 y descubierta=true –> mina descubierta y por tanto FIN
+
+> Consejo:
+Estas clases no incorporan ninguna lógica adicional, por tanto es una jerarquía de clase básica
 >
 <p><span style="color: blue;">Paso 2: Composición nAria→ Clase Tablero</span></p><br>
 ___Una vez realizada la jerarquía de clase de Celda, el siguiente paso será modelar el concepto de
@@ -104,12 +104,14 @@ o vertical.
 que pueden ser modificadas.
 - Es obligatorio la entrega de la autodocumentación (Javadoc)
 
-
 ## Versionado 📌
+
 ___@version 1.0, 24/03/2022___
 
 ## Autores ✒️
+
 ___@author Jose Luis Obiang Ela Nanguan___
 
 ## Página Github
+
 ___https://github.com/Jloen1999/PraticasEDI/tree/master/src/es/unex/cum/edi/practica____

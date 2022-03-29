@@ -4,7 +4,7 @@ package es.unex.cum.edi.practica.tablero;
  * Interface Colores. Contiene una serie de constantes que nos permiten
  * establecer el color de fondo y texto que queremos usar para mostrar
  * el tablero del juego
- * 
+ *
  * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0, 24/03/2022
  */

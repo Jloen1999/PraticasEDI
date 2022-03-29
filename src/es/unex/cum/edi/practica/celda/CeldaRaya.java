@@ -3,7 +3,7 @@ package es.unex.cum.edi.practica.celda;
 /**
  * Clase CeldaRaya. Es una clase que deriva de la clase
  * abstracta Celda
- * 
+ *
  * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0, 22/03/2022
  * @see Celda
@@ -26,7 +26,7 @@ public class CeldaRaya extends Celda {
      * Constructor parametrizado. Inicializa todos los
      * atributos de esta clase y la de su clase padre
      * Celda con los nuevos valores recibidos
-     * 
+     *
      * @param fila    Recibe un valor de tipo entero
      * @param columna Recibe un valor de tipo entero
      */
@@ -38,7 +38,7 @@ public class CeldaRaya extends Celda {
     /**
      * Metodo que nos permite obtener el valor del atributo
      * color
-     * 
+     *
      * @return color Devuelve un valor de tipo entero
      */
     public int getColor() {
@@ -47,7 +47,7 @@ public class CeldaRaya extends Celda {
 
     /**
      * Metodo que modifica el valor del atributo color
-     * 
+     *
      * @param color Recibe un valor de tipo entero
      */
     public void setColor(int color) {
@@ -58,7 +58,7 @@ public class CeldaRaya extends Celda {
      * Metodo que nos permite obtener el valor del atributo
      * estado en formato cadena teniendo en cuenta los
      * diferentes estados que puede tener una CeldaRaya
-     * 
+     *
      * @return stringStatus Devuelve un valor de tipo cadena
      */
     public String getEstadoString() {
@@ -80,7 +80,7 @@ public class CeldaRaya extends Celda {
     /**
      * Metodo redefinido para comparar todos los atributos
      * de esta clase y la de su padre Celda
-     * 
+     *
      * @param obj Recibe un objeto global
      * @return Devuelve un valor de tipo booleano
      */
@@ -94,7 +94,7 @@ public class CeldaRaya extends Celda {
     /**
      * Metodo redefinido para mostrar todos los atributos de
      * esta clase y la de su padre Celda
-     * 
+     *
      * @return Devuelve un valor de tipo cadena
      */
     @Override

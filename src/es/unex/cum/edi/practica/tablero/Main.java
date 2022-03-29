@@ -5,13 +5,13 @@ import java.io.IOException;
 /**
  * Clase Main. Es la clase principal que ejecuta
  * esta aplicacion
- * 
+ *
  * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0, 24/03/2022
  */
 public class Main {
 
-    private JuegoMinas jMinas=new JuegoMinas();
+    private JuegoMinas jMinas = new JuegoMinas();
     private Teclado t;
 
     public static void main(String[] args) throws Exception {
@@ -46,13 +46,13 @@ public class Main {
     public void initialData() throws Exception {
 
         char response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?");
-        response=Character.toUpperCase(response);
-        while (response!='S' && response!='N') {
+        response = Character.toUpperCase(response);
+        while (response != 'S' && response != 'N') {
             System.out.println("Error:");
             response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?");
         }
 
-        if (response=='S') {
+        if (response == 'S') {
             jMinas = new JuegoMinas(); // Constructor por defecto
         } else {
             System.out.println("Datos iniciales");
@@ -64,22 +64,39 @@ public class Main {
         }
     }
 
+    public int controlFilColum(int coor,String xy) throws IOException{
+        if(xy.equals("filas")){
+            coor=t.literalConEntero("Introduce el número de filas");
+            while (coor < 0) {
+                coor = t.literalConEntero("Error: vuelve a introducir el número de filas");
+            }
+        }else{
+            coor = t.literalConEntero("Introduce el número de columnas");
+            while (coor < 0) {
+                coor = t.literalConEntero("Error: vuelve a introducir el número de columnas");
+            }
+        }
+
+        return coor;
+
+    }
+
+
     /**
      * Metodo que nos permite introducir por teclado el
      * numero de filas, columnas y el numero maximo de minas
      * que tendra el tablero
-     * 
-     * @return parameters Devuelve un array de enteros que contiene la fila, columna y maximo de minas.
+     *
+     * @return parameters Devuelve un array de enteros
      * @throws IOException Lanza una excepcion
      */
     public Integer[] enterParameters() throws IOException {
         int rows=0,columns=0;
-        char xy;
-        xy='x';
-        rows=jMinas.enterParametersXY(t,rows,xy);
-        xy='y';
-        columns=jMinas.enterParametersXY(t,columns,xy);
-
+        String xy;
+        xy="filas";
+        rows=controlFilColum(rows,xy);
+        xy="columnas";
+        columns=controlFilColum(rows,xy);
         int maxNumeric = t.literalConEntero("Introduce el número máximo de minas [0," + ((rows * columns) - 1) + "]");
         while (maxNumeric < 0 || maxNumeric >= (rows * columns)) {
             maxNumeric = t.literalConEntero(

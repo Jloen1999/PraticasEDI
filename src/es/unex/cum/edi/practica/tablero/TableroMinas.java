@@ -7,7 +7,7 @@ import es.unex.cum.edi.practica.celda.*;
 /**
  * Clase TableroMinas. Es una clase que deriva de la clase
  * abstracta Tablero
- * 
+ *
  * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0, 23/03/2022
  * @see Tablero, Colores
@@ -29,7 +29,7 @@ public class TableroMinas extends Tablero implements Colores {
      * Constructor parametrizado. Inicializa todos los
      * atributos de esta clase y la de su padre Tablero
      * con los nuevos valores recibidos
-     * 
+     *
      * @param numFilas    Recibe un valor de tipo entero
      * @param numColumnas Recibe un valor de tipo entero
      * @param numMaximo   Recibe un valor de tipo entero
@@ -42,7 +42,7 @@ public class TableroMinas extends Tablero implements Colores {
     /**
      * Metodo que nos permite obtener el valor del atributo
      * numMaximo
-     * 
+     *
      * @return numMaximo Devuelve un valor de tipo entero
      */
     public int getNumMaximo() {
@@ -51,7 +51,7 @@ public class TableroMinas extends Tablero implements Colores {
 
     /**
      * Metodo que modifica el valor del atributo numMaximo
-     * 
+     *
      * @param numMaximo Recibe un valor de tipo entero
      */
     public void setNumMaximo(int numMaximo) {
@@ -61,7 +61,7 @@ public class TableroMinas extends Tablero implements Colores {
     /**
      * Metodo que se encarga de contar el numero de minas
      * que hay en todas las celdas del tablero
-     * 
+     *
      * @return counterMines Devuelve un valor de tipo entero
      */
     public int countMinesTab() {
