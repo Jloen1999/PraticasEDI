@@ -41,6 +41,7 @@ jerarquía Celda. Como puede verse en el diagrama UML del último folio la jerar
 >Consejo: 
    Estas clases no incorporan ninguna lógica adicional, por tanto es una jerarquía de clase
 básica
+>
 <span style="border: 1px dotted blue;color: blue;">Paso 2: Composición nAria→ Clase Tablero</span>
 ___Una vez realizada la jerarquía de clase de Celda, el siguiente paso será modelar el concepto de
 tablero de Juego. En este caso un Tablero estará formado por una matriz bidimensional de Celdas.
