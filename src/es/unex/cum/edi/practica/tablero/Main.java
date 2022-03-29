@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class Main {
 
-    private JuegoMinas jMinas;
+    private JuegoMinas jMinas=new JuegoMinas();
     private Teclado t;
 
     public static void main(String[] args) throws Exception {
@@ -45,18 +45,19 @@ public class Main {
 
     public void initialData() throws Exception {
 
-        String response = t.literalConString("¿Deseas utilizar parametros por defecto (S|N)?");
-        while (!response.toUpperCase().equals("S") && !response.toUpperCase().equals("N")) {
+        char response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?");
+        response=Character.toUpperCase(response);
+        while (response!='S' && response!='N') {
             System.out.println("Error:");
-            response = t.literalConString("¿Deseas utilizar parametros por defecto (S|N)?");
+            response = t.literalConCaracter("¿Deseas utilizar parametros por defecto (S|N)?");
         }
 
-        if (response.toUpperCase().equals("S")) {
+        if (response=='S') {
             jMinas = new JuegoMinas(); // Constructor por defecto
         } else {
             System.out.println("Datos iniciales");
 
-            Integer[] parameters = enterParemeters();
+            Integer[] parameters = enterParameters();
 
             TableroMinas tab = new TableroMinas(parameters[0], parameters[1], parameters[2]);
             jMinas = new JuegoMinas(tab); // Constructor parametrizado
@@ -71,7 +72,7 @@ public class Main {
      * @return parameters Devuelve un array de enteros
      * @throws IOException Lanza una excepcion
      */
-    public Integer[] enterParemeters() throws IOException {
+    public Integer[] enterParameters() throws IOException {
         int rows=0,columns=0;
         char xy;
         xy='x';

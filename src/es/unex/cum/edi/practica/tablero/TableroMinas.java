@@ -68,9 +68,9 @@ public class TableroMinas extends Tablero implements Colores {
         int counterMines;
 
         counterMines = 0;
-        for (int i = 0; i < this.numFilas; i++) {
-            for (int j = 0; j < this.numColumnas; j++) {
-                if (this.tablero[i][j].getEstado() == 1) {
+        for (int i = 0; i < super.numFilas; i++) {
+            for (int j = 0; j < super.numColumnas; j++) {
+                if (super.tablero[i][j].getEstado() == 1) {
                     counterMines++;
                 }
             }
@@ -86,7 +86,7 @@ public class TableroMinas extends Tablero implements Colores {
     public void printBorderUpDown() {
 
         System.out.print(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "---");
-        for (int i = 0; i < this.numColumnas; i++) {
+        for (int i = 0; i < super.numColumnas; i++) {
             System.out.print("---");
         }
         System.out.println("---" + ANSI_RESET);
@@ -100,9 +100,9 @@ public class TableroMinas extends Tablero implements Colores {
     @Override
     public void inicializar() {
 
-        for (int i = 0; i < this.numFilas; i++) {
-            for (int j = 0; j < this.numColumnas; j++) {
-                this.tablero[i][j] = new CeldaMinas(i, j);
+        for (int i = 0; i < super.numFilas; i++) {
+            for (int j = 0; j < super.numColumnas; j++) {
+                super.tablero[i][j] = new CeldaMinas(i, j);
             }
         }
     }
@@ -119,8 +119,8 @@ public class TableroMinas extends Tablero implements Colores {
         int nRandom, counterMines;
 
         nRandom = counterMines = 0;
-        for (int i = 0; i < this.numFilas; i++) {
-            for (int j = 0; j < this.numColumnas; j++) {
+        for (int i = 0; i < super.numFilas; i++) {
+            for (int j = 0; j < super.numColumnas; j++) {
                 // Numero aleatorio de 0 a 3 incluidos
                 nRandom = (new Random()).nextInt(4);
 
@@ -157,9 +157,9 @@ public class TableroMinas extends Tablero implements Colores {
         String color;
 
         printBorderUpDown();
-        for (int i = 0; i < this.numFilas; i++) {
+        for (int i = 0; i < super.numFilas; i++) {
             System.out.print(ANSI_WHITE_BACKGROUND + ANSI_BLACK + "|  " + ANSI_RESET);
-            for (int j = 0; j < this.numColumnas; j++) {
+            for (int j = 0; j < super.numColumnas; j++) {
                 CeldaMinas cM = (CeldaMinas) getCelda(i, j);
                 if (cM.isDescubierta() && cM.getEstado() == 1) {
                     System.out.print(ANSI_RED + " * " + ANSI_RESET);
