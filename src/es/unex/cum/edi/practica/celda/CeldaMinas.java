@@ -113,7 +113,7 @@ public class CeldaMinas extends Celda {
     @Override
     public String toString() {
         return super.toString() +
-                " CeldaMinas [descubierta=" + (descubierta ? "sí" : "no") +
+                " CeldaMinas [descubierta=" + (descubierta ? "si" : "no") +
                 (getEstadoString().length() > 0 ? (", estado=" + getEstadoString()) : "") + "]";
     }
 }

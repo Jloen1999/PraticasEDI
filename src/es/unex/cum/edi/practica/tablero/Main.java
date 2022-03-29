@@ -29,7 +29,7 @@ public class Main {
         System.out.println("**************************** JUEGO MINAS (Tablero) ****************************");
         System.out.println("Numero de filas: " + jMinas.getTMinas().getNumFilas());
         System.out.println("Numero de columnas: " + jMinas.getTMinas().getNumColumnas());
-        System.out.println("Numero mÃ¡ximo de minas: " + jMinas.getTMinas().getNumMaximo());
+        System.out.println("Numero máximo de minas: " + jMinas.getTMinas().getNumMaximo());
         System.out.println("*******************************************************************************");
 
         System.out.println("********* Inicializando ********");
@@ -45,10 +45,10 @@ public class Main {
 
     public void initialData() throws Exception {
 
-        String response = t.literalConString("Â¿Deseas utilizar parametros por defecto (S|N)?");
+        String response = t.literalConString("¿Deseas utilizar parametros por defecto (S|N)?");
         while (!response.toUpperCase().equals("S") && !response.toUpperCase().equals("N")) {
             System.out.println("Error:");
-            response = t.literalConString("Â¿Deseas utilizar parametros por defecto (S|N)?");
+            response = t.literalConString("¿Deseas utilizar parametros por defecto (S|N)?");
         }
 
         if (response.toUpperCase().equals("S")) {
@@ -72,21 +72,17 @@ public class Main {
      * @throws IOException Lanza una excepcion
      */
     public Integer[] enterParemeters() throws IOException {
+        int rows=0,columns=0;
+        char xy;
+        xy='x';
+        rows=jMinas.enterParametersXY(t,rows,xy);
+        xy='y';
+        columns=jMinas.enterParametersXY(t,columns,xy);
 
-        int rows = t.literalConEntero("Introduce el nÃºmero de filas");
-        while (rows < 0) {
-            rows = t.literalConEntero("Error: vuelve a introducir el nÃºmero de filas");
-        }
-
-        int columns = t.literalConEntero("Introduce el nÃºmero de columnas");
-        while (columns < 0) {
-            columns = t.literalConEntero("Error: vuelve a introducir el nÃºmero de columnas");
-        }
-
-        int maxNumeric = t.literalConEntero("Introduce el nÃºmero mÃ¡ximo de minas [0," + ((rows * columns) - 1) + "]");
+        int maxNumeric = t.literalConEntero("Introduce el número máximo de minas [0," + ((rows * columns) - 1) + "]");
         while (maxNumeric < 0 || maxNumeric >= (rows * columns)) {
             maxNumeric = t.literalConEntero(
-                    "Error: vuelve a introducir el nÃºmero mÃ¡ximo de minas [0," + ((rows * columns) - 1) + "]");
+                    "Error: vuelve a introducir el número máximo de minas [0," + ((rows * columns) - 1) + "]");
         }
         Integer[] parameters = { rows, columns, maxNumeric };
 

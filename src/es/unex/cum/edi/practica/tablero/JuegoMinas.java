@@ -61,27 +61,28 @@ public class JuegoMinas implements Juego {
      * @return parameters Devuelve un array de enteros
      * @throws IOException Laza una excepcion
      */
-    public Integer[] enterParametersXY(Teclado t) throws IOException {
 
-        // Nos aseguramos de que se introduzcan bien los datos
-        int x = t.literalConEntero("Introduce la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
-        while (x < 0 || x >= tMinas.getNumFilas()) {
-            System.out.println("Error:");
-            x = t.literalConEntero("Vuelve a introducir la posicion x [0," + (tMinas.getNumFilas() - 1) + "]");
+
+    public int enterParametersXY(Teclado t,int coor, char xy) throws IOException{
+        if(xy=='x'){
+            coor = t.literalConEntero("Introduce la posicion "+xy+" [0," + (tMinas.getNumFilas() - 1) + "]");
+            while (coor < 0 || coor >= tMinas.getNumFilas()) {
+                System.out.println("Error:");
+                coor = t.literalConEntero("Vuelve a introducir la posicion "+xy+" [0," + (tMinas.getNumFilas() - 1) + "]");
+            }
+        }else{
+            coor = t.literalConEntero("Introduce la posicion "+xy+" [0," + (tMinas.getNumColumnas() - 1) + "]");
+            while (coor < 0 || coor >= tMinas.getNumColumnas()) {
+                System.out.println("Error:");
+                coor = t.literalConEntero("Vuelve a introducir la posicion "+xy+" [0," + (tMinas.getNumColumnas() - 1) + "]");
+            }
         }
 
-        int y = t.literalConEntero("Introduce la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
-        while (y < 0 || y >= tMinas.getNumColumnas()) {
-            System.out.println("Error:");
-            y = t.literalConEntero("Vuelve a introducir la posicion y [0," + (tMinas.getNumColumnas() - 1) + "]");
-        }
-        Integer[] parameters = { x, y };
-
-        return parameters;
+        return coor;
     }
 
     /**
-     * Meotodo que se encarga de mostrar por pantalla todas
+     * Metodo que se encarga de mostrar por pantalla todas
      * las celdas que tienen el estado 1 (mina)
      */
     public void showCellsMines() {
@@ -105,17 +106,18 @@ public class JuegoMinas implements Juego {
      */
     @Override
     public void jugar() throws IOException {
-        int x, y, option;
+        int x=0, y=0, option;
+        char xy;
         boolean endGame;
         Integer[] parameters;
         Teclado t = new Teclado();
 
         endGame = false;
         do {
-
-            parameters = enterParametersXY(t);
-            x = parameters[0];
-            y = parameters[1];
+            xy='x';
+            x=enterParametersXY(t,x,xy);
+            xy='y';
+            y=enterParametersXY(t,y,xy);
 
             // Obtenemos la CeldaMinas de las posiciones introducidas
             CeldaMinas cMinas = (CeldaMinas) tMinas.getCelda(x, y);
