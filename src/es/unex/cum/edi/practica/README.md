@@ -106,6 +106,7 @@ que pueden ser modificadas.
 
 
 ## Versionado 📌
-
+___@version 1.0, 24/03/2022___
 
 ## Autores ✒️
+___@author Jose Luis Obiang Ela Nanguan___
