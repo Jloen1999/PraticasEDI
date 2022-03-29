@@ -69,7 +69,7 @@ public class Main {
      * numero de filas, columnas y el numero maximo de minas
      * que tendra el tablero
      * 
-     * @return parameters Devuelve un array de enteros
+     * @return parameters Devuelve un array de enteros que contiene la fila, columna y maximo de minas.
      * @throws IOException Lanza una excepcion
      */
     public Integer[] enterParameters() throws IOException {

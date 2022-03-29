@@ -54,14 +54,15 @@ public class JuegoMinas implements Juego {
 
     /**
      * Metodo que nos permite introducir por teclado dos
-     * valores enteros que se almacenaran en un vector
+     * valores enteros, la fila y la columna y nos devolvera un entero
      * despues de comprobar su correcta introduccion
-     * 
+     *
      * @param t Recibe un objeto de tipo Teclado
-     * @return parameters Devuelve un array de enteros
-     * @throws IOException Laza una excepcion
+     * @param coor valor de la fila o columna
+     * @param xy caracter x o y
+     * @return coor
+     * @throws IOException Lanza una excepcion
      */
-
 
     public int enterParametersXY(Teclado t,int coor, char xy) throws IOException{
         if(xy=='x'){
@@ -109,15 +110,14 @@ public class JuegoMinas implements Juego {
         int x=0, y=0, option;
         char xy;
         boolean endGame;
-        Integer[] parameters;
         Teclado t = new Teclado();
 
         endGame = false;
         do {
             xy='x';
-            x=enterParametersXY(t,x,xy);
+            x=enterParametersXY(t,x,xy); //Introducimos una fila
             xy='y';
-            y=enterParametersXY(t,y,xy);
+            y=enterParametersXY(t,y,xy); //Introducimos una columna
 
             // Obtenemos la CeldaMinas de las posiciones introducidas
             CeldaMinas cMinas = (CeldaMinas) tMinas.getCelda(x, y);
