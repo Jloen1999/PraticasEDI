@@ -243,16 +243,20 @@ public class Clase {
      * Dificultad: Media
      */
     public float averageMarks(int exp) {
+
+        float media = 0.0f, totalNotas = 0.0f;
         int index = getIndexEstudiant(exp);
-        float media = 0, totalNotas = 0;
         if (index != -1) {
             Lista asignaturas = listaClase.get(index).getLista();
-            asignaturas.iterator();
-            while (asignaturas.hasNext()) {
-                Asignatura asig = (Asignatura) asignaturas.next();
-                totalNotas += asig.getNota();
+            if(!asignaturas.listaVacia()) {
+
+                asignaturas.iterator();
+                while (asignaturas.hasNext()) {
+                    Asignatura asig = (Asignatura) asignaturas.next();
+                    totalNotas += asig.getNota();
+                }
+                media = totalNotas / asignaturas.size();
             }
-            media = totalNotas / asignaturas.size();
         } else {
             media = -1.0F;
         }
