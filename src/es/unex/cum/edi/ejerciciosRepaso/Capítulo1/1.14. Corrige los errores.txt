@@ -1,0 +1,3 @@
+A) La variable n3 no tiene ningún valor asignado, por lo que la instrucción suma = suma + n3 falla. Basta con asignarle algún valor (aunque sea cero) antes de utilizarla por primera vez.
+B) La variable suma es de tipo boolean, lo que no tiene ningún sentido. Debería ser de tipo int. Así, el programa sí funciona.
+C) Se ha intentado usar una variable (cuad) sin haberla declarado previamente. Bastará con escribir int cuad; antes de usarla para solucionar el problema. También puede declararse la primera vez que se usa, es decir: int cuad = n * n;

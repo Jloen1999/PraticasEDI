@@ -1,0 +1,41 @@
+NOTA INFORMATIVA Y AVISO LEGAL
+------------------------------
+
+Estos son los ejercicios resueltos del libro "Java para novatos: cómo aprender programación orientada a objetos con Java sin desesperarse en el intento".
+
+Los ejercicios están distribuidos en directorios (o carpetas) que se corresponden con los capítulos del libro.
+
+Dentro de cada directorio encontrarás otros directorios identificados con el número y el título del ejercicio. El código fuente está dentro de ese directorio, a veces todo en el mismo archivo y a veces en varios archivos (depende del ejercicio, claro).
+
+Los ejercicios del capítulo 1 se presentan, en su mayoría, sin organizar en subdirectorios, ya que, excepto los dos últimos, no se corresponden a programas completos.
+
+Por favor, si encuentras cualquier error o quieres hacernos algún comentario o aclaración, siéntete libre de escribirnos a admin@ensegundapersona.es.
+
+Todo el código fuente se distribuye con licencia Apache 2.0. Por favor, consulta los detalles de la licencia en la web de apache.org para maś información.
+
+------------------------------
+
+Copyright 2017 A. M. Vozmediano
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this files except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Estos archivos se distribuyen bajo la Licencia Apache Versión 2.0;
+no puedes utilizarlos excepto en los términos descritos en la Licencia. 
+Puedes leer una copia completa de la Licencia en
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+A menos que sea obligatorio por la ley o establecido en un contrato, el software
+distribuido que está bajo esta Licencia se distribuye "TAL CUAL",
+SIN GARANTÍAS NI CONDICIONES DE NINGÚN TIPO, ya sean explícitas o implícitas.
+

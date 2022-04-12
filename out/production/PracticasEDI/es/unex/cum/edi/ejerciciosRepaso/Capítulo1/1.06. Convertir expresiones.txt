@@ -1,0 +1,6 @@
+a) (M / N) + P
+c) (x+y) / (a-b)
+e) (m+(n/p)) / (q-(r/s))
+b) m+(n/(p-q))+p
+d) 2* (Math.sin(x) + Math.cos(x)) / Math.tan(x)
+f) (-b + Math.sqrt(b*b-4*a*c))/(2*a)

@@ -17,16 +17,18 @@ package es.unex.cum.edi.evaluables.sesion1;
 
 import java.util.Scanner;
 
-public class Billetes {//Creamos la clase Billete con el mismo nombre que el fichero del programa
+public class Billetes {// Creamos la clase Billete con el mismo nombre que el fichero del programa
 
-    //Creamos una funcion de acceso estatico de tipo void que recibe varios parametros
-    /*contadorEuro-->contador del auro
-     *contadorCentimo-->contador del centimo
+    // Creamos una funcion de acceso estatico de tipo void que recibe varios
+    // parametros
+    /*
+     * contadorEuro-->contador del auro
+     * contadorCentimo-->contador del centimo
      * euro-->valor del euro
      * centimo-->valor del centimo
      */
     public static void mostrarDinero(int contadorEuro, int contadorCentimo, int euro, int centimo) {
-        //Controlamos la salida en base a los contadores y las cantidades
+        // Controlamos la salida en base a los contadores y las cantidades
         if (euro == 1 && contadorEuro == 1) {
             System.out.println(contadorEuro + " billete de " + euro + " euro");
         } else if (euro > 1 && contadorEuro == 1 && euro != 2) {
@@ -51,7 +53,8 @@ public class Billetes {//Creamos la clase Billete con el mismo nombre que el fic
         }
     }
 
-    public static void obtenerContador(int parteEntera, double parteDecimal, int contadorEuro, int contadorCentimo, int euro, int centimo) {
+    public static void obtenerContador(int parteEntera, double parteDecimal, int contadorEuro, int contadorCentimo,
+            int euro, int centimo) {
         if (contadorEuro == 0) {
             while (parteDecimal >= centimo) {
                 contadorCentimo++;
@@ -69,24 +72,27 @@ public class Billetes {//Creamos la clase Billete con el mismo nombre que el fic
         }
     }
 
-
     public static void main(String[] args) {
-        Scanner leer = new Scanner(System.in);//Creamos un objeto de la clase Scanner para la entrada de datos por teclado
-        int contadorEuro = 0, euro;//Declaramos e Inicializamos los contadores
+        Scanner leer = new Scanner(System.in);// Creamos un objeto de la clase Scanner para la entrada de datos por
+                                              // teclado
+        int contadorEuro = 0, euro;// Declaramos e Inicializamos los contadores
         int contadorCentimo = 0, centimo;
-        double dinero = leer.nextDouble();//Introducimos el dinero por teclado
-        if (dinero < 0) {//Controlamos si el numero es negativo nos saldra un mensaje de error
+        double dinero = leer.nextDouble();// Introducimos el dinero por teclado
+        if (dinero < 0) {// Controlamos si el numero es negativo nos saldra un mensaje de error
             System.out.println("error");
-        } else {//En caso contrario
-            double decimal = dinero % 1;//Obtenemos la parte decimal
-            double parteDecimal = (Math.round(decimal * 100.0) / 100.0);//Solo necesitamos dos cifras en la parte decimal, la cual multiplicamos por 100 para quedarnos sin decimales
+        } else {// En caso contrario
+            double decimal = dinero % 1;// Obtenemos la parte decimal
+            double parteDecimal = (Math.round(decimal * 100.0) / 100.0);// Solo necesitamos dos cifras en la parte
+                                                                        // decimal, la cual multiplicamos por 100 para
+                                                                        // quedarnos sin decimales
 
-            int parteEntera = (int) dinero;//Obtenemos la parte entera
+            int parteEntera = (int) dinero;// Obtenemos la parte entera
 
-            //Empezamos con la parte entera/Euros
-            euro = 500;//Asignamos a la variable euro las cantidades de referencia y
+            // Empezamos con la parte entera/Euros
+            euro = 500;// Asignamos a la variable euro las cantidades de referencia y
             // mientras que el dinero introducido sea mayor o igual
-            // a dicha cantidad se seguira incrementando hasta que sea menor y entonces repetimos
+            // a dicha cantidad se seguira incrementando hasta que sea menor y entonces
+            // repetimos
             // el proceso con el resto de cantidades de referencia
             obtenerContador(parteEntera, 0, contadorEuro, contadorCentimo, euro, 0);
             euro = 200;
@@ -112,8 +118,8 @@ public class Billetes {//Creamos la clase Billete con el mismo nombre que el fic
             euro = 1;
             obtenerContador(parteEntera, 0, contadorEuro, contadorCentimo, euro, 0);
 
-            //Parte decimal/Centimos
-            centimo = 50;//Repetimos el mismo proceso que con los euros
+            // Parte decimal/Centimos
+            centimo = 50;// Repetimos el mismo proceso que con los euros
             obtenerContador(0, parteDecimal, contadorEuro, contadorCentimo, 0, centimo);
             centimo = 20;
             obtenerContador(0, parteDecimal, contadorEuro, contadorCentimo, 0, centimo);

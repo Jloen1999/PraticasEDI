@@ -1,0 +1,371 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.Newsesion5.Main",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainAsignatura",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.ayuda.MainAsignatura",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainProcesador",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.ayuda.MainProcesador",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainSupermercado",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.ayuda.MainSupermercado",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Billetes",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion1.Billetes",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch BilletesConArrays",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion1.BilletesConArrays",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch BilletesPablo",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion1.BilletesPablo",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fibonacci",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion1.Fibonacci",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Multiplo2y5",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion1.Multiplo2y5",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch SumaNumero",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion1.SumaNumero",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(1)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion2.Main",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(2)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion5.Main",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(3)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion6.Main",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(4)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion8.Main",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainClase",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.evaluables.sesion8.MainClase",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Busqueda",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.metodosOrdenacion.Busqueda",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ordenacion",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.metodosOrdenacion.Ordenacion",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Alcance",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.Alcance",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch CambioDivisaProbar",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.CambioDivisaProbar",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConversionGradosCelsiusFarenheit",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.ConversionGradosCelsiusFarenheit",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch EnterosAleatorios",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.EnterosAleatorios",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Evaluacion",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.Evaluacion",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hellonombre",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.Hellonombre",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch HolaEdi",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.HolaEdi",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Meses",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.Meses",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MiNumeroPrueba",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.MiNumeroPrueba",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch PesoProbar",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.PesoProbar",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Primo",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.Primo",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch PruebaFactorial",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.PruebaFactorial",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Suma100numeros",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.Suma100numeros",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch TemperaturaProbar",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion0.TemperaturaProbar",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Billetes(1)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.Billetes",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Bisiesto1",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.Bisiesto1",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjecutarEstudiante",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.EjecutarEstudiante",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjecutarPersona",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.EjecutarPersona",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch EjecutarTransaccionIngreso",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.EjecutarTransaccionIngreso",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch HolaMundo",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.HolaMundo",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch NumeroPrimo",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.NumeroPrimo",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch ParImpar",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.ParImpar",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProbarDistancia",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.ProbarDistancia",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch UsoFechas",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.UsoFechas",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch UsoStringBuilder",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion1.UsoStringBuilder",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Array",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion2.Array",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainS1",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion2.MainS1",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainS2",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion2.MainS2",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainS3",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion2.MainS3",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch SegundoEjemplo",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion7.SegundoEjemplo",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(5)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion7Extra.Main",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(6)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion8Extra.Main",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main2",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.noevaluables.sesion8Extra.Main2",
+            "projectName": "PraticasEDI_18469aa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main(7)",
+            "request": "launch",
+            "mainClass": "es.unex.cum.edi.practica.tablero.Main",
+            "projectName": "PraticasEDI_18469aa"
+        }
+    ]
+}

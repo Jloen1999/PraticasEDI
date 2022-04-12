@@ -1,7 +1,7 @@
 package es.unex.cum.edi.evaluables.sesion5;
 import java.io.*;
 
-/** Clase para la entrada de datos por Teclado
+/** Clase para la entrada de datos por es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Teclado
  * @author EDI
  */
 public class Teclado {

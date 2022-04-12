@@ -1,0 +1,12 @@
+a) Correcto
+b) Correcto
+c) Correcto
+d) Correcto
+f) Correcto
+g) Correcto, pero problemático: se intenta asignar un entero a un real (funcionará por conversión implícita)
+h) Correcto
+i) Incorrecto: se intenta asignar un String a un boolean.
+j) Correcto
+k) Correcto
+l) Incorrecto: se intenta asignar un real a un entero.
+m) Incorrecto: se intenta asignar un boolean a un carácter.

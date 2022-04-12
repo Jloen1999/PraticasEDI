@@ -25,14 +25,14 @@ public class Estudiante extends Persona{
     //Redefino el metodo toString()
 
 //    public String toString(){
-//        return "Estudiante{" +
+//        return "es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Estudiante{" +
 //                "Numero de expediente=" +getNumExpediente()+super.toString()+
 //                "}";
 //    }
 
     //Redefino el metodo toString
     public String toString(){
-        return "Estudiante[" +
+        return "es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Estudiante[" +
                 "nombre=" +nombre+ //acceso como atributo directo
                 "dni=" +super.getDni() +//acceso mediante el metodo getters
                 "edad="+super.edad+ //acceso al atributo por super

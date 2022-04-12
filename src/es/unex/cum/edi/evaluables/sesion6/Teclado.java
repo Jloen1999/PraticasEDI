@@ -5,7 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/** Clase para la entrada de datos por Teclado
+/** Clase para la entrada de datos por es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Teclado
  * @author EDI
  */
 public class Teclado {

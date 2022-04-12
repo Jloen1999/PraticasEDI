@@ -1,0 +1,9 @@
+a) Correcto
+b) Incorrecto (empieza por un número)
+c) Incorrecto (contiene carácter &)
+d) Incorrecto (comienza por _)
+e) Correcto
+f) Incorrecto (contiene carácter ñ)
+g) Incorrecto (contiene comillas)
+h) Incorrecto (contiene carácter ñ)
+i) Correcto

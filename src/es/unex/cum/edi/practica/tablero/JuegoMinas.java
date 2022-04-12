@@ -57,7 +57,7 @@ public class JuegoMinas implements Juego {
      * valores enteros, una fila y columna especificas y nos devolvera un entero
      * despues de comprobar su correcta introduccion
      *
-     * @param t    Recibe un objeto de tipo Teclado
+     * @param t    Recibe un objeto de tipo es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Teclado
      * @param coor valor de la fila o columna
      * @param xy   caracter x o y
      * @return coor

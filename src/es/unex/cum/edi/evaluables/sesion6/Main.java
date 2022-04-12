@@ -59,7 +59,7 @@ public class  Main {
     private static Teclado t;
 
     public static void main(String[] args) throws IOException {
-        t = new Teclado();//Instanciamos un obejto de la clase Teclado
+        t = new Teclado();//Instanciamos un obejto de la clase es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Teclado
         a = new Ahorcado();//Instanciamos un objeto de la clase Ahorcado
         int tam = 5, max = 6;//Especificamos el tamaño del array de palabras y el máximo de intentos
         initAhorcado(tam, max);//Inicializamos el ahorcado con un tamaño y maximo de intentos fijos

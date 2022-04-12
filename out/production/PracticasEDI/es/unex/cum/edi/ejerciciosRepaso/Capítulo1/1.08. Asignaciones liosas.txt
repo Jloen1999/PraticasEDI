@@ -1,0 +1,4 @@
+A) a = 180, b = 12, c = 15. En la pantalla aparecerá el número 207.
+B) x = 5. En la pantalla aparecerá 5.0
+C) x = 10, y = 3, z = verdadero. En la pantalla aparecerá: “x vale 10, y vale 3 y z vale true”
+D) a = 5, b = 5. En la pantalla aparecerá 10.

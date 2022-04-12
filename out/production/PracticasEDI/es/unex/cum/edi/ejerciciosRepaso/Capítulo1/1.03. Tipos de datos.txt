@@ -1,0 +1,9 @@
+a) int (entero)
+b) float o double (real)
+c) int
+d) float o double
+e) char (carácter)
+f) String (cadena de caracteres)
+g) boolean
+h) String
+i) String

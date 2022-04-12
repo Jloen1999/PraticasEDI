@@ -3,7 +3,7 @@ package es.unex.cum.edi.practica.tablero;
 import java.io.*;
 
 /**
- * Clase para la entrada de datos por Teclado
+ * Clase para la entrada de datos por es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Teclado
  *
  * @author EDI
  */
