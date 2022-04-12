@@ -1,6 +1,7 @@
 package es.unex.cum.edi.noevaluables.sesion2;
 
-import evaluables.sesion5.Palabra;
+
+import es.unex.cum.edi.evaluables.Newsesion5.Palabra;
 
 import java.io.BufferedReader;
 import java.io.IOException;

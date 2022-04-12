@@ -68,7 +68,6 @@ public Teclado(boolean CV)
             }
         }
     }
-
     /**
      * Lee un float. Sigue pidiendo el dato hasta que sea correcto.
      * @return Float leido
@@ -183,7 +182,7 @@ public Teclado(boolean CV)
      * @throws IOException
      */
     public int Menu(String[] args, int min, int max) throws IOException {
-        int opcion = 0;
+        int opcion =0;
         do {
             try { //Try de la excepción por si se introduce una letra en vez de un número en el menú o no se introduce nada
 

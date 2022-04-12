@@ -140,7 +140,7 @@ public class Ahorcado {
         String texto = seleccionado.getTexto();//Obtenemos la palabra seleccionada;
         //Recorremos el array de todos los caracteres de la palabra seleccionada
         for (int i = 0; i < seleccionado.getTexto().length(); i++) {
-            if (letra == texto.charAt(i) && !aciertos[i]) {//Si la letra no esta y he acertado
+            if (letra == texto.charAt(i) && !aciertos[i]) {//Si la letra esta y no es acertada todavia
                 enc = true;//si la letra es encontrada
                 aciertos[i] = true;//Almacenamos en un array de booleanos
             }
