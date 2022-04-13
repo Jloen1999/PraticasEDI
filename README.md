@@ -23,6 +23,6 @@ public class Repaso
 }
 ```
 |Header1|Header2|Header3|
----|---|---|
+|:---|---:|:---:|
 |dato1|dato2|dato3|
 
