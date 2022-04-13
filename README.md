@@ -32,4 +32,18 @@ public class Repaso
 [w3schools](https://www.wschools.io)
 ------
 ***********
-<div style="width:10px; height:20px">![Imagen](photo_2022-03-26_17-55-26.jpg?raw=true "Imagen")</div>
+<style>
+.heading1 {
+    color: red;
+    font-weight:700;
+    font-size: 35px;
+}
+.heading2 {
+    color: blue;
+    font-weight:700;
+    font-size: 30px;
+}
+</style>
+
+# Markdown heading styles {#identifier .heading1}
+## Markdown heading styles {#identifier .heading2}
