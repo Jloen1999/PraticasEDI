@@ -22,7 +22,7 @@ public class Repaso
 
 }
 ```
-<code data-lang="java">import java.io.BufferedReader;
+<code class="language-java" data-lang="java">import java.io.BufferedReader;
 import java.io.InputStreamReader;
 public class Repaso
 {
