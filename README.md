@@ -1,2 +1,3 @@
-_***PRÁCTICAS DE EDI***_
-This is header tag content {::comment} todo lo que haga falta {:/comment}
+<span style="color:green;font-weight:700;font-size:20px">
+    markdown color font styles
+</span>
