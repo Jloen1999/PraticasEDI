@@ -1,2 +1,2 @@
-<h1><em><font color="red" size="20" face="Arial">PRÁCTICAS DE EDI</em></font></h1>
+<span style="color: blue; text-align: center"><h1><em>PRÁCTICAS DE EDI</em></h1></span>
 
