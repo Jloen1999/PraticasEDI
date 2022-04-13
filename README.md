@@ -22,20 +22,7 @@ public class Repaso
 
 }
 ```
+|Header1|Header2|Header3|
+---|---|---|
+|dato1|dato2|dato3|
 
-<table>
-  <thead>
-      <tr>
-          <th>Header1</th>
-          <th>Header2</th>
-          <th>Header3</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <th>Datos1</th>
-          <th>Datos2</th>
-          <th>Datos3</th>
-      </tr>
-  </tbody>
-</table>
