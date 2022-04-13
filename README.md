@@ -22,7 +22,20 @@ public class Repaso
 
 }
 ```
-<code data-lang="java"><Integer numero=new Integer()</code>
+<code data-lang="java">import java.io.BufferedReader;
+import java.io.InputStreamReader;
+public class Repaso
+{
+   public static void main(String[] args){
+     BufferedReader input=new BufferedReader(new InputStreamReader(System.in);
+     int numero;
+     System.out.println("Introduce un numero: ");
+     numero=Integer.parseInt(input.readLine());
+     System.out.println("El numero es "+numero);
+     
+   }
+
+}</code>
 |Header1|Header2|Header3|
 |:---|---:|:---:|
 |dato1|`dato2`|dato3|
