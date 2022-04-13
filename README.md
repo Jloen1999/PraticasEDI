@@ -1,4 +1,4 @@
-_***PRÁCTICAS DE EDI***_
+____PRÁCTICAS DE EDI____
 >This is blockquote text 
 >
 > This is the second blockquote text
