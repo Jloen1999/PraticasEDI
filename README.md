@@ -1,2 +1,2 @@
-<h1>*** PRÁCTICAS DE EDI**</h1>
+<h1><em>PRÁCTICAS DE EDI**</em></h1>
 
