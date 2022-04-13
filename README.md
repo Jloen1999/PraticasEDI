@@ -33,4 +33,6 @@ public class Repaso
 ------
 *****
 ******
+<div style="width:10px; height:20px">
 ![Imagen](photo_2022-03-26_17-55-26.jpg?raw=true "Imagen")
+</div>
