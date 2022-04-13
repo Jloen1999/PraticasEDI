@@ -22,7 +22,19 @@ public class Repaso
 
 }
 
-|Header1 |Header2  | Header3|
---- | --- | ---|
-|data1|data2|data3|
-|data11|data12|data13|
+<table>
+  <thead>
+      <tr>
+          <th>Header1</th>
+          <th>Header2</th>
+          <th>Header3</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <th>Datos1</th>
+          <th>Datos2</th>
+          <th>Datos3</th>
+      </tr>
+  </tbody>
+</table>
