@@ -1,4 +1,4 @@
 _***PRÁCTICAS DE EDI***_
-{::comment}
+This is header tag content {::comment}
 todo lo que haga falta
 {:/comment}
