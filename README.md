@@ -6,7 +6,7 @@
 >
 No me gustan las citas previas
 ~Tachame~
-```
+```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 public class Repaso
@@ -22,6 +22,7 @@ public class Repaso
 
 }
 ```
+<code data-lang="java"><Integer numero=new Integer()</code>
 |Header1|Header2|Header3|
 |:---|---:|:---:|
 |dato1|`dato2`|dato3|
