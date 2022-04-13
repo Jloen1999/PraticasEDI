@@ -24,5 +24,6 @@ public class Repaso
 ```
 |Header1|Header2|Header3|
 |:---|---:|:---:|
-|dato1|dato2|dato3|
+|dato1|`dato2`|dato3|
+|\|dato5|\`ato6|dato7|
 
