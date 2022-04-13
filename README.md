@@ -26,8 +26,10 @@ public class Repaso
 |:---|---:|:---:|
 |dato1|`dato2`|dato3|
 |\|dato5|\`ato6|dato7|
-
+===
 ### &lt;div&gt; test content &lt; div&gt;
+------
 [w3schools](https://www.wschools.io)
+------
 *****
 ******
