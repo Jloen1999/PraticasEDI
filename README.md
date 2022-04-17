@@ -7,8 +7,11 @@ Repositorio para subir todas las sesiones de la asignatura de EDI(Estructuras de
 ###Sesiones:
 --
 :one:
+--
 2️⃣
+--
 3️⃣
+--
 ###Metas:
 
 
