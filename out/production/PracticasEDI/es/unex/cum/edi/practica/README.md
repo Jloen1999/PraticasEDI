@@ -51,7 +51,7 @@ imagen del último folio esta jerarquía de clase estará formada:___
 - Clase base Tablero. Clase abstracta formada por:
      -numFilas: Número de filas (modificable en el constructor)
      -numColumnas: Número de columnas (modificable en el constructor)
-- Celda[][] tablero; Matriz bidimensional de Celdas
+- Celda[][] tablero; es.unex.cum.edi.ejerciciosRepaso.Capítulo5.Matriz bidimensional de Celdas
       -Tiene los siguientes métodos:
           -void setEstado(int f, int c, int e): Se encarga de cambiar el estado (e) de la celda indicada por la fila (f) y la columna (c)
           -int getEstado(int f, int c): Devuelve el estado de la celda indicada en la fila (f) y la columna (c)
