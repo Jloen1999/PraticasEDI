@@ -1,10 +1,10 @@
-__**#PRÁCTICAS DE EDI#**__
+__**# PRÁCTICAS DE EDI #**__
 --
-##Objetivo: :computer:
+## Objetivo: :computer: ##
 --
 Repositorio para subir todas las sesiones de la asignatura de EDI(Estructuras de Datos y de la Información
 --
-###Sesiones:
+### Sesiones:
 --
 :one:
 --
