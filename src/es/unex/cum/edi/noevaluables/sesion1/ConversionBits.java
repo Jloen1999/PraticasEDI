@@ -1,4 +1,4 @@
-package es.unex.cum.edi.repaso;
+package es.unex.cum.edi.noevaluables.sesion1;
 import static java.lang.Math.*;
 public class ConversionBits {
     private double cantidad;

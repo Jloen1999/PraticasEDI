@@ -1,4 +1,6 @@
-package es.unex.cum.edi.repaso;
+package es.unex.cum.edi.noevaluables.sesion1;
+
+import es.unex.cum.edi.repaso.Teclado;
 
 import java.io.IOException;
 
