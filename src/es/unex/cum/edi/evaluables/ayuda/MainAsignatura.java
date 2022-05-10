@@ -1,5 +1,4 @@
 package es.unex.cum.edi.evaluables.ayuda;
-import es.unex.cum.edi.evaluables.sesion2.Libro;
 
 import java.io.BufferedReader;
 import java.io.IOException;

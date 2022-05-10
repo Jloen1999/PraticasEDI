@@ -9,14 +9,14 @@ import java.io.IOException;
  * @author Jose Luis Obiang Ela Nanguan
  * @version 1.0, 24/03/2022
  */
-public class Main {
+public class Main1 {
 
     private JuegoMinas jMinas = new JuegoMinas();
     private Teclado t;
 
     public static void main(String[] args) throws Exception {
 
-        Main m = new Main();
+        Main1 m = new Main1();
         m.t = new Teclado();
 
         m.initialData();
