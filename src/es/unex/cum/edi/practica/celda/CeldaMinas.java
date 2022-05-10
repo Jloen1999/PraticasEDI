@@ -23,6 +23,19 @@ public class CeldaMinas extends Celda {
     }
 
     /**
+     * Constructor copia. Inicializa todos los
+     * atributos de esta clase y la de su clase padre Celda
+     * a partir de un nuevo objeto
+     *
+     * @param celdaMinas Recibe un objeto de tipo CeldaMinas 
+     */
+    public CeldaMinas(CeldaMinas celdaMinas) {
+        super(celdaMinas.fila, celdaMinas.columna);
+        estado = celdaMinas.estado;
+        descubierta = celdaMinas.descubierta;
+    }
+
+    /**
      * Constructor parametrizado. Inicializa todos los
      * atributos de esta clase y la de su clase padre Celda
      * con los nuevos valores recibidos

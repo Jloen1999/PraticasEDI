@@ -1,9 +1,10 @@
 package es.unex.cum.edi.evaluables.sesion8;
 
+import java.util.HashSet;
+
 public class Asignatura {
     protected String nombre;
     protected float nota;
-
     public Asignatura() {
         nombre = "";
         nota = 0;

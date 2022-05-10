@@ -1,6 +1,9 @@
 package es.unex.cum.edi.practica.tablero;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import es.unex.cum.edi.practica.celda.*;
 
@@ -8,12 +11,13 @@ import es.unex.cum.edi.practica.celda.*;
  * Clase JuegoMinas
  *
  * @author Jose Luis Obiang Ela Nanguan
- * @version 1.0, 24/03/2022
+ * @version 1.0, 11/05/2022
  * @see Juego
  */
 public class JuegoMinas implements Juego {
 
     private TableroMinas tMinas;
+    private Queue<CeldaMinas> celdaMinas;
 
     /**
      * Constructor por defecto. Inicializa todos los
@@ -21,6 +25,7 @@ public class JuegoMinas implements Juego {
      */
     public JuegoMinas() {
         tMinas = new TableroMinas();
+        celdaMinas = new LinkedList<CeldaMinas>();
     }
 
     /**
@@ -32,6 +37,7 @@ public class JuegoMinas implements Juego {
      */
     public JuegoMinas(TableroMinas tMinas) {
         this.tMinas = tMinas;
+        celdaMinas = new LinkedList<CeldaMinas>();
     }
 
     /**
@@ -53,32 +59,80 @@ public class JuegoMinas implements Juego {
     }
 
     /**
+     * Metodo que nos permite obtener la cola de celdaMinas
+     * 
+     * @return celdaMinas Devuelve una lista de tipo Queue
+     */
+    public Queue<CeldaMinas> getCeldaMinas() {
+        return celdaMinas;
+    }
+
+    /**
+     * Metodo que nos permite agregar una nueva CeldaMinas en
+     * la cola de celdaMinas
+     * 
+     * @param cMina Recibe un objeto de tipo CeldaMinas
+     * @return true si la CeldaMina se agregó correctamente, de lo contrario false
+     */
+    public boolean addCeldaMinas(CeldaMinas cMina) {
+
+        if (cMina != null) {
+            CeldaMinas c = new CeldaMinas(cMina);
+            return celdaMinas.offer(c);
+        }
+        return false;
+    }
+
+    /**
+     * Metodo que nos permite mostrar todos los datos que
+     * hay en la cola de movimientos celdaMinas
+     */
+    public void mostrarMovimientos() {
+
+        if (!celdaMinas.isEmpty()) {
+
+            System.out.println("------------------------------------------------------------------------");
+            System.out.println("------------ Mostrando los movimientos de la última partida ------------");
+            System.out.println("------------------------------------------------------------------------");
+
+            Iterator<CeldaMinas> it = celdaMinas.iterator();
+            while (it.hasNext()) {
+                CeldaMinas cMina = (CeldaMinas) it.next();
+                System.out.println(cMina.toString());
+            }
+        } else {
+            System.out.println("No hay movimientos");
+        }
+    }
+
+    /**
      * Metodo que nos permite introducir por teclado dos
      * valores enteros, una fila y columna especificas y nos devolvera un entero
      * despues de comprobar su correcta introduccion
      *
-     * @param t    Recibe un objeto de tipo es.unex.cum.edi.ejerciciosRepaso.Cap�tulo5.Teclado
+     * @param t    Recibe un objeto de tipo Teclado
      * @param coor valor de la fila o columna
-     * @param xy   caracter x o y
+     * @param tipo Cadena que identifica el tipo de parametro a obtener
      * @return coor
      * @throws IOException Lanza una excepcion
      */
+    public int introducirParametros(Teclado t, int coor, String tipo) throws IOException {
 
-    public int enterParametersXY(Teclado t, int coor, char xy) throws IOException {
-        if (xy == 'x') {
-            coor = t.literalConEntero("Introduce la posicion " + xy + " [0," + (tMinas.getNumFilas() - 1) + "]");
+        if (tipo.equals("fila")) {
+            coor = t.literalConEntero("Introduce una fila de 0 a " + (tMinas.getNumFilas() - 1) + " incluidos");
             while (coor < 0 || coor >= tMinas.getNumFilas()) {
                 System.out.println("Error:");
-                coor = t.literalConEntero("Vuelve a introducir la posicion " + xy + " [0," + (tMinas.getNumFilas() - 1) + "]");
+                coor = t.literalConEntero(
+                        "Vuelve a introducir una fila de 0 a " + (tMinas.getNumFilas() - 1) + " incluidos");
             }
         } else {
-            coor = t.literalConEntero("Introduce la posicion " + xy + " [0," + (tMinas.getNumColumnas() - 1) + "]");
+            coor = t.literalConEntero("Introduce una columna de 0 a " + (tMinas.getNumColumnas() - 1) + " incluidos");
             while (coor < 0 || coor >= tMinas.getNumColumnas()) {
                 System.out.println("Error:");
-                coor = t.literalConEntero("Vuelve a introducir la posicion " + xy + " [0," + (tMinas.getNumColumnas() - 1) + "]");
+                coor = t.literalConEntero(
+                        "Vuelve a introducir una columna de 0 a " + (tMinas.getNumColumnas() - 1) + " incluidos");
             }
         }
-
         return coor;
     }
 
@@ -86,7 +140,7 @@ public class JuegoMinas implements Juego {
      * Metodo que se encarga de mostrar por pantalla todas
      * las celdas que tienen el estado 1 (mina)
      */
-    public void showCellsMines() {
+    public void mostrarCeldasMinas() {
 
         for (int i = 0; i < tMinas.getNumFilas(); i++) {
             for (int j = 0; j < tMinas.getNumColumnas(); j++) {
@@ -99,113 +153,139 @@ public class JuegoMinas implements Juego {
     }
 
     /**
-     * Metodo en el que realizamos un bucle que se encarga
-     * de pedir una posicion (x,y) del tablero y establecer
-     * si se quiere descubrir o anotar como mina
+     * Metodo en el que realizamos un bucle que se encarga de pedir una posicion
+     * (x,y) del tablero y establecer si se quiere descubrir o anotar como mina
      *
+     * @return ganado true si ganas, false en caso contrario
      * @throws IOException Lanza una excepcion
      */
     @Override
-    public void jugar() throws IOException {
-        int x = 0, y = 0, option;
-        char xy;
-        boolean endGame;
+    public boolean jugar() throws IOException {
+        int fila = 0, columna = 0, opcion;
+        boolean finalizarJuego, continuarJuego, ganado;
         Teclado t = new Teclado();
 
-        endGame = false;
+        finalizarJuego = ganado = false;
         do {
-            xy = 'x';
-            x = enterParametersXY(t, x, xy); //Introducimos una fila
-            xy = 'y';
-            y = enterParametersXY(t, y, xy); //Introducimos una columna
+            continuarJuego = false;
+
+            fila = introducirParametros(t, fila, "fila"); // Introducimos una fila
+            columna = introducirParametros(t, columna, "columna"); // Introducimos una columna
 
             // Obtenemos la CeldaMinas de las posiciones introducidas
-            CeldaMinas cMinas = (CeldaMinas) tMinas.getCelda(x, y);
+            CeldaMinas cMinas = (CeldaMinas) tMinas.getCelda(fila, columna);
 
-            String[] args = {"1. Descubrir la celda.", "2. Anotar la celda como mina."};
-            option = t.Menu(args, 1, 2);
-            if (option == 1) {
-                cMinas.setDescubierta(true);
-            } else {
-                resolver(x, y);
+            String[] opciones = { "1. Descubrir la celda.", "2. Anotar la celda como mina.", "3. Regresar." };
+            opcion = t.Menu(opciones, 1, 3);
+            if (opcion == 1) {
+                if (!cMinas.isDescubierta()) {
+                    cMinas.setDescubierta(true);
+                    continuarJuego = true;
+                }
+            } else if (opcion == 2) {
+                if (!cMinas.isDescubierta()) {
+                    if (cMinas.getEstado() != 1) {
+                        resolver(fila, columna);
+                        continuarJuego = true;
+                    }
+                }
             }
 
-            // Mostramos el tablero actualizado
-            tMinas.mostrar();
-            System.out.println(cMinas.toString() + "\n");
+            if (opcion != 3 && continuarJuego) {
 
-            // !OJO! El juego tambien finaliza si la celda actual es "mina descubierta"
-            if (cMinas.isDescubierta() && cMinas.getEstado() == 1) {
-                endGame = true;
+                addCeldaMinas(cMinas);
+
+                // Mostramos el tablero actualizado
+                tMinas.mostrar();
+                System.out.println(cMinas.toString() + "\n");
+
+                // !OJO! El juego tambien finaliza si la celda actual es "mina descubierta"
+                if (cMinas.isDescubierta() && cMinas.getEstado() == 1) {
+                    finalizarJuego = true;
+                }
+
+                if (!finalizarJuego) {
+                    finalizarJuego = verSiFin();
+                    ganado = finalizarJuego;
+                }
+            } else if (!continuarJuego) {
+
+                if (cMinas.isDescubierta()) {
+                    System.out.println("Error: esta celda ya esta descubierta.");
+                } else {
+                    if (opcion == 2 && cMinas.getEstado() == 1) {
+                        System.out.println("Error: esta celda ya es una mina.");
+                    }
+                }
+                // Mostramos el tablero actualizado
+                System.out.println(cMinas.toString());
+                tMinas.mostrar();
             }
+        } while (!finalizarJuego);
 
-            if (!endGame) {
-                endGame = verSiFin();
-            }
-        } while (!endGame);
-
-        System.out.println("***** FIN *****");
+        return ganado;
     }
 
     /**
      * Metodo que se encarga de cambiar el estado de la
-     * celda a partir de una posicion x e y. Anotamos una
-     * celda como mina cambiando su estado a 1
+     * celda a partir de una posicion fila y columna.
+     * Anotamos una celda como mina cambiando su estado a 1
      *
-     * @param x Recibe un valor de tipo entero
-     * @param y Recibe un valor de tipo entero
+     * @param fila    Recibe un valor de tipo entero
+     * @param columna Recibe un valor de tipo entero
      */
     @Override
-    public void resolver(int x, int y) {
+    public void resolver(int fila, int columna) {
         int c;
 
-        c = ((TableroMinas) tMinas).countMinesTab();
+        c = ((TableroMinas) tMinas).contarMinasTablero();
         if (c < tMinas.getNumMaximo()) {
-            tMinas.setEstado(x, y, 1);
+            tMinas.setEstado(fila, columna, 1);
         }
     }
 
     /**
      * Metodo que se encarga de ver si el juego ha finalizado
-     * (finaliza si todas las celdas no minas estan descubiertas
-     * o si el total de minas anotadas es igual al maximo de minas
+     * (finaliza si todas las celdas no minas estan descubiertas,
+     * si el total de minas anotadas es igual al maximo de minas o
+     * si una celda mina es descubierta)
      *
-     * @return endGame Devuelve un valor de tipo booleano
+     * @return finalizarJuego Devuelve un valor de tipo booleano
      */
     @Override
     public boolean verSiFin() {
-        int cellsUncovered;
-        boolean endGame;
+        int celdasDescubiertas;
+        boolean finalizarJuego;
 
-        endGame = false;
+        finalizarJuego = false;
         // Obtenemos todas las celdas descubiertas que no son minas
-        cellsUncovered = 0;
+        celdasDescubiertas = 0;
         for (int i = 0; i < tMinas.getNumFilas(); i++) {
             for (int j = 0; j < tMinas.getNumColumnas(); j++) {
                 if (tMinas.getTablero()[i][j].getClass().equals(CeldaMinas.class)) {
                     CeldaMinas cM = (CeldaMinas) tMinas.getCelda(i, j);
                     if (cM.isDescubierta() && cM.getEstado() != 1) {
-                        cellsUncovered++;
+                        celdasDescubiertas++;
                     }
                 }
             }
         }
 
         // Celdas descubiertas no minas + todas las minas del tablero
-        int cells = cellsUncovered + ((TableroMinas) tMinas).countMinesTab();
-        if (cells == (tMinas.getNumFilas()) * tMinas.getNumColumnas()) {
+        int celdas = celdasDescubiertas + ((TableroMinas) tMinas).contarMinasTablero();
+        if (celdas == (tMinas.getNumFilas()) * tMinas.getNumColumnas()) {
             // Si se descubre todas las celdas que no son minas
             System.out.println("Todas las celdas no minas han sido descubiertas.");
-            endGame = true;
+            finalizarJuego = true;
         }
 
         // Si anotamos todas las minas
-        if (tMinas.countMinesTab() == tMinas.getNumMaximo()) {
+        if (tMinas.contarMinasTablero() == tMinas.getNumMaximo()) {
             System.out.println("Todas las minas han sido anotadas.");
-            showCellsMines();
+            mostrarCeldasMinas();
 
-            endGame = true;
+            finalizarJuego = true;
         }
-        return endGame;
+        return finalizarJuego;
     }
 }

@@ -11,9 +11,9 @@ import java.io.IOException;
  */
 public interface Juego {
 
-    public void jugar() throws IOException;
+    public boolean jugar() throws IOException;
 
-    public void resolver(int x, int y);
+    public void resolver(int row, int column);
 
     public boolean verSiFin();
 }
